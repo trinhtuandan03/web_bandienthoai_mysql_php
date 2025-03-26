@@ -12,6 +12,7 @@ class Database
     private $username = "root";
     private $password = "";
     public $conn;
+
     public function getConnection()
     {
         $this->conn = null;

@@ -17,11 +17,11 @@ class AccountController
     }
     function register()
     {
-        include_once 'app/views/account/register.php';
+        include_once 'App/views/account/register.php';
     }
     public function login()
     {
-        include_once 'app/views/account/login.php';
+        include_once 'App/views/account/login.php';
     }
     function save()
     {
@@ -73,8 +73,11 @@ class AccountController
         $password = $data['password'] ?? '';
         $user = $this->accountModel->getAccountByUserName($username);
         if ($user && password_verify($password, $user->password)) {
-            $token = $this->jwtHandler->encode(['id' => $user->id, 'username' =>
-            $user->username]);
+            $token = $this->jwtHandler->encode([
+                'id' => $user->id,
+                'username' =>
+                    $user->username
+            ]);
             echo json_encode(['token' => $token]);
         } else {
             http_response_code(401);

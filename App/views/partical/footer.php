@@ -1,3 +1,4 @@
+<footer class="footer-area ">
 <div class="container ">
     <!--== Start Features Area Wrapper ==-->
     <div class="features-area ">
@@ -144,3 +145,23 @@
     </div>
     <!--== End Footer Bottom ==-->
 </div>
+
+
+<!-- JS Vendor, Plugins & Activation Script Files -->
+
+<!-- Vendors JS -->
+<script src="./public/js/vendor/modernizr-3.11.7.min.js "></script>
+<script src="./public/js/vendor/jquery-3.6.0.min.js "></script>
+<script src="./public/js/vendor/jquery-migrate-3.3.2.min.js "></script>
+<script src="./public/js/vendor/bootstrap.bundle.min.js "></script>
+
+<!-- Plugins JS -->
+<script src="./public/js/plugins/swiper-bundle.min.js "></script>
+<script src="./public/js/plugins/fancybox.min.js "></script>
+<script src="./public/js/plugins/jquery.nice-select.min.js "></script>
+<script src="./public/js/plugins/jquery.countdown.min.js "></script>
+<script src="./public/js/plugins/isotope.pkgd.min.js "></script>
+
+<!-- Custom Main JS -->
+<script src="./public/js/main.min.js "></script>
+</footer>
