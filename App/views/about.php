@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 <?php include_once("partical/header.php"); ?>
+
 <body>
 
     <!--== Wrapper Start ==-->
@@ -42,7 +43,7 @@
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="/home">
-                                    <img class="logo-main" src="/public/images/logo.png" width="182" height="31"
+                                    <img class="logo-main" src="./public/images/logo.png" width="182" height="31"
                                         alt="Logo">
                                 </a>
                             </div>
@@ -90,35 +91,35 @@
                                         class="icon fa fa-angle-down"></i></button>
                                 <ul class="vmenu-content vmenu-content-none">
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm1.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm1.png"
                                                     alt="Icon"></span> Headphone</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm2.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm2.png"
                                                     alt="Icon"></span> Video Game</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm3.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm3.png"
                                                     alt="Icon"></span> Protable Speakers</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm4.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm4.png"
                                                     alt="Icon"></span> Digital Camera</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm5.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm5.png"
                                                     alt="Icon"></span> Gadgets</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm6.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm6.png"
                                                     alt="Icon"></span> Home Appliances</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm7.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm7.png"
                                                     alt="Icon"></span> Audio Record</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="/public/images/icons/vm8.png"
+                                        <a href="shop.html"> <span class="icon"><img src="./public/images/icons/vm8.png"
                                                     alt="Icon"></span> Computer/Laptop</a>
                                     </li>
                                 </ul>
@@ -166,7 +167,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="page-header-thumb">
-                                <img src="/public/images/photos/page-title.png" alt="Image-HasTech" width="546"
+                                <img src="./public/images/photos/page-title.png" alt="Image-HasTech" width="546"
                                     height="281">
                             </div>
                         </div>
@@ -181,7 +182,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="ps-lg-10 pe-lg-10 ms-lg-2 me-lg-2 mb-10 mb-lg-0 text-center text-lg-start">
-                                <img src="/public/images/photos/d1.jpg" alt="Image-HasTech" width="449" height="550">
+                                <img src="./public/images/photos/d1.jpg" alt="Image-HasTech" width="449" height="550">
                             </div>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
@@ -205,7 +206,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="/public/images/team/1.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/1.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
                                     <h4 class="team-title mt-n1">Kiersten Lange</h4>
@@ -226,7 +227,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="/public/images/team/2.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/2.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
                                     <h4 class="team-title mt-n1">Monroe Bond</h4>
@@ -247,7 +248,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="/public/images/team/3.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/3.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
                                     <h4 class="team-title mt-n1">Raymond Atkins</h4>
@@ -271,7 +272,7 @@
             <!--== End Team Area ==-->
 
             <!--== Start Testimonial Area ==-->
-            <div class="testimonial-area section-space bg-img" data-bg-img="/public/images/photos/bg1.jpg">
+            <div class="testimonial-area section-space bg-img" data-bg-img="./public/images/photos/bg1.jpg">
                 <div class="container">
                     <div class="section-title text-center">
                         <h2 class="title text-white mt-n2 mb-n1">Customer Review</h2>
@@ -283,12 +284,12 @@
                                     <div class="testimonial-content">
                                         <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
                                             ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="/public/images/icons/quote1.png" alt="Image"
+                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
                                             width="69" height="65">
                                     </div>
                                     <div class="testimonial-info">
                                         <div class="client-thumb">
-                                            <img src="/public/images/photos/client1.png" alt="Image" width="94"
+                                            <img src="./public/images/photos/client1.png" alt="Image" width="94"
                                                 height="94">
                                         </div>
                                         <div class="info">
@@ -301,12 +302,12 @@
                                     <div class="testimonial-content">
                                         <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
                                             ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="/public/images/icons/quote1.png" alt="Image"
+                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
                                             width="69" height="65">
                                     </div>
                                     <div class="testimonial-info">
                                         <div class="client-thumb">
-                                            <img src="/public/images/photos/client2.png" alt="Image" width="94"
+                                            <img src="./public/images/photos/client2.png" alt="Image" width="94"
                                                 height="94">
                                         </div>
                                         <div class="info">
@@ -319,12 +320,12 @@
                                     <div class="testimonial-content">
                                         <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
                                             ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="/public/images/icons/quote1.png" alt="Image"
+                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
                                             width="69" height="65">
                                     </div>
                                     <div class="testimonial-info">
                                         <div class="client-thumb">
-                                            <img src="/public/images/photos/client3.png" alt="Image" width="94"
+                                            <img src="./public/images/photos/client3.png" alt="Image" width="94"
                                                 height="94">
                                         </div>
                                         <div class="info">
@@ -337,12 +338,12 @@
                                     <div class="testimonial-content">
                                         <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
                                             ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="/public/images/icons/quote1.png" alt="Image"
+                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
                                             width="69" height="65">
                                     </div>
                                     <div class="testimonial-info">
                                         <div class="client-thumb">
-                                            <img src="/public/images/photos/client4.png" alt="Image" width="94"
+                                            <img src="./public/images/photos/client4.png" alt="Image" width="94"
                                                 height="94">
                                         </div>
                                         <div class="info">
@@ -369,7 +370,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item">
                                 <div class="feature-icon">
-                                    <img src="/public/images/icons/1.png" width="44" height="38" alt="Icon">
+                                    <img src="./public/images/icons/1.png" width="44" height="38" alt="Icon">
                                 </div>
                                 <div class="feature-content">
                                     <h4 class="feature-title">Support 24/7</h4>
@@ -382,7 +383,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item">
                                 <div class="feature-icon">
-                                    <img src="/public/images/icons/2.png" width="38" height="38" alt="Icon">
+                                    <img src="./public/images/icons/2.png" width="38" height="38" alt="Icon">
                                 </div>
                                 <div class="feature-content">
                                     <h4 class="feature-title">Easy Returns</h4>
@@ -395,7 +396,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item">
                                 <div class="feature-icon">
-                                    <img src="/public/images/icons/3.png" width="48" height="38" alt="Icon">
+                                    <img src="./public/images/icons/3.png" width="48" height="38" alt="Icon">
                                 </div>
                                 <div class="feature-content">
                                     <h4 class="feature-title">Card Payment</h4>
@@ -408,7 +409,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item border-0">
                                 <div class="feature-icon">
-                                    <img src="/public/images/icons/4.png" width="50" height="38" alt="Icon">
+                                    <img src="./public/images/icons/4.png" width="50" height="38" alt="Icon">
                                 </div>
                                 <div class="feature-content">
                                     <h4 class="feature-title">Free Shipping</h4>
@@ -432,7 +433,7 @@
                     <div class="row row-cols-3 row-cols-sm-3 row-cols-lg-5 gx-4 mb-n6 justify-content-center">
                         <div class="col mb-6">
                             <div class="gallery-item">
-                                <img src="/public/images/photos/gallery1.png" alt="Instagram Image">
+                                <img src="./public/images/photos/gallery1.png" alt="Instagram Image">
                                 <a class="gallery-overlay" target="_blank" rel="noopener"
                                     href="https://www.instagram.com/">
                                     <i class="fa fa-instagram"></i>
@@ -441,7 +442,7 @@
                         </div>
                         <div class="col mb-6">
                             <div class="gallery-item">
-                                <img src="/public/images/photos/gallery2.png" alt="Instagram Image">
+                                <img src="./public/images/photos/gallery2.png" alt="Instagram Image">
                                 <a class="gallery-overlay" target="_blank" rel="noopener"
                                     href="https://www.instagram.com/">
                                     <i class="fa fa-instagram"></i>
@@ -450,7 +451,7 @@
                         </div>
                         <div class="col mb-6">
                             <div class="gallery-item">
-                                <img src="/public/images/photos/gallery3.png" alt="Instagram Image">
+                                <img src="./public/images/photos/gallery3.png" alt="Instagram Image">
                                 <a class="gallery-overlay" target="_blank" rel="noopener"
                                     href="https://www.instagram.com/">
                                     <i class="fa fa-instagram"></i>
@@ -459,7 +460,7 @@
                         </div>
                         <div class="col mb-6">
                             <div class="gallery-item">
-                                <img src="/public/images/photos/gallery4.png" alt="Instagram Image">
+                                <img src="./public/images/photos/gallery4.png" alt="Instagram Image">
                                 <a class="gallery-overlay" target="_blank" rel="noopener"
                                     href="https://www.instagram.com/">
                                     <i class="fa fa-instagram"></i>
@@ -468,7 +469,7 @@
                         </div>
                         <div class="col mb-6">
                             <div class="gallery-item">
-                                <img src="/public/images/photos/gallery5.png" alt="Instagram Image">
+                                <img src="./public/images/photos/gallery5.png" alt="Instagram Image">
                                 <a class="gallery-overlay" target="_blank" rel="noopener"
                                     href="https://www.instagram.com/">
                                     <i class="fa fa-instagram"></i>
