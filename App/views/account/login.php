@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
-
-<!-- Mirrored from htmldemo.net/elehaus/elehaus/login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jun 2024 08:39:27 GMT -->
-
-<?php include_once("partical/header.php"); ?>
-
+<?php include_once(__DIR__ . '/../partical/header.php'); ?>
 
 <body>
     <!--== Wrapper Start ==-->
@@ -54,9 +50,5 @@
     </div>
 </body>
 
-<!--== Start Footer Area Wrapper ==-->
-<?php include_once("partical/footer.php"); ?>
-<!--== End Footer Area Wrapper ==-->
-<!-- Mirrored from htmldemo.net/elehaus/elehaus/login-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jun 2024 08:39:27 GMT -->
 
 </html>

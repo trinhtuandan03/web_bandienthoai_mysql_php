@@ -15,6 +15,25 @@ class ProductController
         $this->db = (new Database())->getConnection();
         $this->productModel = new ProductModel($this->db);
     }
+
+    function product_index()
+    {
+        include_once 'App/views/product/product_index.php';
+    }
+    function productdetails()
+    {
+        include_once 'App/views/product/productdetails.php';
+    }
+    function shopcart()
+    {
+        include_once 'App/views/product/shopcart.php';
+    }
+    function shopwishlist()
+    {
+        include_once 'App/views/product/shopwishlist.php';
+    }
+
+
     public function index()
     {
         $products = $this->productModel->getProducts();

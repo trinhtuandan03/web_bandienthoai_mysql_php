@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-
-
 <?php include_once("partical/header.php"); ?>
 <body>
 

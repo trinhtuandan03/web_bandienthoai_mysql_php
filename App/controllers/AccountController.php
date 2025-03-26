@@ -23,6 +23,10 @@ class AccountController
     {
         include_once 'App/views/account/login.php';
     }
+    public function account_information()
+    {
+        include_once 'App/views/account/account_information.php';
+    }
     function save()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

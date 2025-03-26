@@ -45,7 +45,7 @@
                         <div class="col-auto">
                             <div class="header-logo">
                                 <a href="/home">
-                                    <img class="logo-main" src="./public/images/logo-light.png" width="182" height="31"
+                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo-light.png" width="182" height="31"
                                         alt="Logo">
                                 </a>
                             </div>
@@ -92,7 +92,7 @@
                 <div class="swiper hero-three-slider-container ">
                     <div class="swiper-wrapper ">
                         <div class="swiper-slide hero-three-slide-item bg-img "
-                            data-bg-img="./public/images/slider/slider3-bg1.jpg ">
+                            data-bg-img="<?= BASE_URL ?>/public/images/slider/slider3-bg1.jpg ">
                             <div class="container h-100 ">
                                 <div class="row align-items-center position-relative h-100 ">
                                     <div class="col-12 col-sm-7 col-md-7 col-lg-6 ">
@@ -113,7 +113,7 @@
                                     </div>
                                 </div>
                                 <div class="hero-three-slide-shape-img "><img
-                                        src="./public/images/slider/slider3-shape1.png " width="201 " height="172 "
+                                        src="<?= BASE_URL ?>/public/images/slider/slider3-shape1.png " width="201 " height="172 "
                                         alt="Image "></div>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="./public/images/icons/1.png " width="44 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/1.png " width="44 " height="38 " alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Support 24/7</h4>
@@ -142,7 +142,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="./public/images/icons/2.png " width="38 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/2.png " width="38 " height="38 " alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Easy Returns</h4>
@@ -155,7 +155,7 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="./public/images/icons/3.png " width="48 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/3.png " width="48 " height="38 " alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Card Payment</h4>
@@ -199,7 +199,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b16.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b16.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges ">-10%</span>
@@ -237,7 +237,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b17.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b17.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges bg-theme3 ">New</span>
@@ -275,7 +275,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b18.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b18.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges bg-theme4 ">Hot</span>
@@ -312,7 +312,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b19.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b19.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges ">Sold Out</span>
@@ -349,7 +349,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b20.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b20.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges bg-theme4 ">Hot</span>
@@ -386,7 +386,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b21.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b21.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges ">-10%</span>
@@ -423,7 +423,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b17.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b17.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges bg-theme3 ">New</span>
@@ -461,7 +461,7 @@
                             <!--== Start Product Item ==-->
                             <div class="product-item ">
                                 <a class="product-item-thumb " href="shop-single-product.html ">
-                                    <img src="./public/images/shop/b22.jpg " width="268 " height="256 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/b22.jpg " width="268 " height="256 "
                                         alt="Image-HasTech ">
                                 </a>
                                 <span class="badges ">-10%</span>
@@ -507,7 +507,7 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="./public/images/shop/banner/1.jpg " width="370 " height="287 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/1.jpg " width="370 " height="287 "
                                         alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
@@ -524,7 +524,7 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="./public/images/shop/banner/2.jpg " width="370 " height="287 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/2.jpg " width="370 " height="287 "
                                         alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
@@ -541,7 +541,7 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="./public/images/shop/banner/3.jpg " width="370 " height="287 "
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/3.jpg " width="370 " height="287 "
                                         alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
@@ -562,7 +562,7 @@
             <!--== Start News Letter Area Wrapper ==-->
             <div class="newsletter-area section-top-space bg-img ">
                 <div class="container ">
-                    <div class="newsletter-three-content-wrap " data-bg-img="./public/images/photos/bg3.jpg ">
+                    <div class="newsletter-three-content-wrap " data-bg-img="<?= BASE_URL ?>/public/images/photos/bg3.jpg ">
                         <div class="newsletter-three-content ">
                             <h2 class="title text-white mt-n2 ">Join Our Newsletter</h2>
                             <p class="text-white ">Join our newsletter and get <span>$20</span> discount for your first

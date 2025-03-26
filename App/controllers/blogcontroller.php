@@ -1,9 +1,13 @@
 <?php
 class blogcontroller
 {
-    public function index()
+    function blog_index()
     {
-        // Đường dẫn đến file view
-        require_once __DIR__ . "/../views/index.php";
+        include_once 'App/views/blog/blog_index.php';
+    }
+    public function blogdetails()
+    {
+        include_once 'App/views/blog/blogdetails.php';
     }
 }
+?>

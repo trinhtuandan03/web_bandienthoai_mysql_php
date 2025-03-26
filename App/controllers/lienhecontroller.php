@@ -1,9 +1,10 @@
 <?php
 class lienhecontroller
 {
+    // Hiển thị Trang Liên Hệ
     public function index()
     {
-        // Đường dẫn đến file view
-        require_once __DIR__ . "/../views/lienhe.php";
+        require_once __DIR__ . '/../views/lienhe.php';
     }
 }
+?>

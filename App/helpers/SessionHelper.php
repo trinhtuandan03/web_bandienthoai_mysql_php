@@ -10,3 +10,4 @@ class SessionHelper
         return isset($_SESSION['username']) && $_SESSION['user_role'] === 'admin';
     }
 }
+?>
