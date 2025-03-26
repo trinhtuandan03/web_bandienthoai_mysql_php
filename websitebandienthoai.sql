@@ -3,9 +3,6 @@ CREATE DATABASE IF NOT EXISTS `websitebandienthoai` /*!40100 DEFAULT CHARACTER S
 USE `websitebandienthoai`;
 
 -- --------------------------------------------------------
--- Tạo cơ sở dữ liệu my_store
--- CREATE DATABASE IF NOT EXISTS `S4_PHP` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
--- USE `S4_PHP`;
 -- Tạo bảng category
 CREATE TABLE
   IF NOT EXISTS `category` (
