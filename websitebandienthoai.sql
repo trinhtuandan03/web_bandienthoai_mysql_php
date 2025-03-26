@@ -18,7 +18,9 @@ CREATE TABLE
     `name` VARCHAR(100) NOT NULL,
     `description` TEXT,
     `price` DECIMAL(10, 2) NOT NULL,
-    `image` VARCHAR(255) DEFAULT NULL,
+    `image1` VARCHAR(255) DEFAULT NULL,
+    `image2` VARCHAR(255) DEFAULT NULL,
+    `image3` VARCHAR(255) DEFAULT NULL,
     `category_id` INT,
     FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
