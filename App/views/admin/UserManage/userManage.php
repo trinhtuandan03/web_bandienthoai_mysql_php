@@ -156,7 +156,7 @@
             </nav>
         </div>
         <div class="nav-left-sidebar sidebar-dark">
-            <%- include('../partical/menuManage') %>
+            <?php include_once(__DIR__ . '/../partical/menuManage.php'); ?>
         </div>
         <div class="dashboard-wrapper">
             <div class="container-fluid  dashboard-content">
@@ -199,7 +199,7 @@
                 </div>
             </div>
             <div class="footer">
-                <%- include('../partical/footerManage') %>
+                <?php include_once(__DIR__ . '/../partical/footerManage.php'); ?>
             </div>
         </div>
     </div>

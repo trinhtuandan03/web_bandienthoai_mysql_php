@@ -10,6 +10,7 @@ class ProductController
 {
     private $productModel;
     private $db;
+
     public function __construct()
     {
         $this->db = (new Database())->getConnection();
@@ -34,11 +35,6 @@ class ProductController
     }
 
 
-    public function index()
-    {
-        $products = $this->productModel->getProducts();
-        include '../views/product/list.php';
-    }
     public function show($id)
     {
         $product = $this->productModel->getProductById($id);

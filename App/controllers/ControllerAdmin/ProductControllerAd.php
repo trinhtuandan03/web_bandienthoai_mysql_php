@@ -16,8 +16,8 @@ class ProductController
     }
     public function index()
     {
-        $products = $this->productModel->getProducts();
-        include 'app/views/product/list.php';
+        // $products = $this->productModel->getProducts();
+        include_once 'App/views/admin/SanPhamManage/Index.php';
     }
     public function show($id)
     {
