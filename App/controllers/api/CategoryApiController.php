@@ -1,7 +1,4 @@
 <?php
-
-use App\Config\Database;
-
 require_once('app/config/database.php');
 require_once('app/models/CategoryModel.php');
 class CategoryApiController
@@ -21,3 +18,4 @@ class CategoryApiController
         echo json_encode($categories);
     }
 }
+?>

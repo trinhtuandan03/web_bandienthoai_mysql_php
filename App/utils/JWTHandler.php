@@ -1,9 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
-
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\Key;
-
 class JWTHandler
 {
     private $secret_key;
@@ -15,7 +13,7 @@ class JWTHandler
     public function encode($data)
     {
         $issuedAt = time();
-        $expirationTime = $issuedAt + 3600; // jwt valid for 1 hour from the issuedtime
+        $expirationTime = $issuedAt + 3600; // jwt valid for 1 hour from the issued time
         $payload = array(
             'iat' => $issuedAt,
             'exp' => $expirationTime,
@@ -34,3 +32,4 @@ class JWTHandler
         }
     }
 }
+?>

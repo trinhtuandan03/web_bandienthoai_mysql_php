@@ -1,31 +1,22 @@
 <?php
-
-use App\Config\Database;
 require_once('app/config/database.php');
 require_once('app/models/AccountModel.php');
-require_once('app/utils/JWTHandler.php');
 class AccountController
 {
     private $accountModel;
     private $db;
-    private $jwtHandler;
     public function __construct()
     {
         $this->db = (new Database())->getConnection();
         $this->accountModel = new AccountModel($this->db);
-        $this->jwtHandler = new JWTHandler();
     }
     function register()
     {
-        include_once 'App/views/account/register.php';
+        include_once 'app/views/account/register.php';
     }
     public function login()
     {
-        include_once 'App/views/account/login.php';
-    }
-    public function account_information()
-    {
-        include_once 'App/views/account/account_information.php';
+        include_once 'app/views/account/login.php';
     }
     function save()
     {
@@ -58,7 +49,7 @@ class AccountController
                 $password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
                 $result = $this->accountModel->save($username, $fullName, $password);
                 if ($result) {
-                    header('Location: /webbanhang/account/login');
+                    header('Location: /web_bandienthoai_mysql_php/account/login');
                 }
             }
         }
@@ -67,25 +58,31 @@ class AccountController
     {
         unset($_SESSION['username']);
         unset($_SESSION['role']);
-        header('Location: /webbanhang/product');
+        header('Location: /web_bandienthoai_mysql_php/product');
     }
     public function checkLogin()
     {
-        header('Content-Type: application/json');
-        $data = json_decode(file_get_contents("php://input"), true);
-        $username = $data['username'] ?? '';
-        $password = $data['password'] ?? '';
-        $user = $this->accountModel->getAccountByUserName($username);
-        if ($user && password_verify($password, $user->password)) {
-            $token = $this->jwtHandler->encode([
-                'id' => $user->id,
-                'username' =>
-                    $user->username
-            ]);
-            echo json_encode(['token' => $token]);
-        } else {
-            http_response_code(401);
-            echo json_encode(['message' => 'Invalid credentials']);
+        // Kiểm tra xem liệu form đã được submit
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = $_POST['username'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $account = $this->accountModel->getAccountByUserName($username);
+            if ($account) {
+                $pwd_hashed = $account->password;
+                //check mat khau
+                if (password_verify($password, $pwd_hashed)) {
+                    session_start();
+                    // $_SESSION['user_id'] = $account->id;
+// $_SESSION['user_role'] = $account->role;
+                    $_SESSION['username'] = $account->username;
+                    header('Location: /web_bandienthoai_mysql_php/product');
+                    exit;
+                } else {
+                    echo "Password incorrect.";
+                }
+            } else {
+                echo "Bao loi khong tim thay tai khoan";
+            }
         }
     }
 }

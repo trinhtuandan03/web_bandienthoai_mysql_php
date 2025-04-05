@@ -1,6 +1,4 @@
 <?php
-
-use App\Config\Database;
 require_once('app/config/database.php');
 require_once('app/models/ProductModel.php');
 require_once('app/models/CategoryModel.php');
@@ -68,7 +66,9 @@ class ProductApiController
             $description,
             $price,
             $category_id,
-            null
+            $data['image1'] ?? null,
+            $data['image2'] ?? null,
+            $data['image3'] ?? null
         );
         if (is_array($result)) {
             http_response_code(400);
@@ -87,13 +87,14 @@ class ProductApiController
         $description = $data['description'] ?? '';
         $price = $data['price'] ?? '';
         $category_id = $data['category_id'] ?? null;
-        $result = $this->productModel->updateProduct(
-            $id,
+        $result = $this->productModel->addProduct(
             $name,
             $description,
             $price,
             $category_id,
-            null
+            $data['image1'] ?? null,
+            $data['image2'] ?? null,
+            $data['image3'] ?? null
         );
         if ($result) {
             echo json_encode(['message' => 'Product updated successfully']);
@@ -115,3 +116,4 @@ class ProductApiController
         }
     }
 }
+?>

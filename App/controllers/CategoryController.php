@@ -1,6 +1,4 @@
 <?php
-
-use App\Config\Database;
 // Require SessionHelper and other necessary files
 require_once('app/config/database.php');
 require_once('app/models/CategoryModel.php');
@@ -19,3 +17,4 @@ class CategoryController
         include 'app/views/category/list.php';
     }
 }
+?>

@@ -4,7 +4,7 @@
 
 <!-- Mirrored from htmldemo.net/elehaus/elehaus/index-five.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jun 2024 08:39:07 GMT -->
 
-<?php include_once("partical/header.php"); ?>
+<?php include("partical/header.php"); ?>
 
 <body>
 
@@ -45,8 +45,8 @@
                         <div class="col-auto">
                             <div class="header-logo">
                                 <a href="/home">
-                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo-light.png" width="182" height="31"
-                                        alt="Logo">
+                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo-light.png"
+                                        width="182" height="31" alt="Logo">
                                 </a>
                             </div>
                         </div>
@@ -113,8 +113,8 @@
                                     </div>
                                 </div>
                                 <div class="hero-three-slide-shape-img "><img
-                                        src="<?= BASE_URL ?>/public/images/slider/slider3-shape1.png " width="201 " height="172 "
-                                        alt="Image "></div>
+                                        src="<?= BASE_URL ?>/public/images/slider/slider3-shape1.png " width="201 "
+                                        height="172 " alt="Image "></div>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,8 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/1.png " width="44 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/1.png " width="44 " height="38 "
+                                        alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Support 24/7</h4>
@@ -142,7 +143,8 @@
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/2.png " width="38 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/2.png " width="38 " height="38 "
+                                        alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Easy Returns</h4>
@@ -150,12 +152,13 @@
                                 </div>
                             </div>
                             <!--== End Feature Item ==-->
-                        </div>
+                        </div>x
                         <div class="col-sm-6 col-md-6 col-lg-3 mb-6 ">
                             <!--== Start Feature Item ==-->
                             <div class="feature-item ">
                                 <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/3.png " width="48 " height="38 " alt="Icon ">
+                                    <img src="<?= BASE_URL ?>/public/images/icons/3.png " width="48 " height="38 "
+                                        alt="Icon ">
                                 </div>
                                 <div class="feature-content ">
                                     <h4 class="feature-title ">Card Payment</h4>
@@ -507,8 +510,8 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/1.jpg " width="370 " height="287 "
-                                        alt="Image-HasTech ">
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/1.jpg " width="370 "
+                                        height="287 " alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
                                     <h5 class="product-banner-desc ">Get 50% Off</h5>
@@ -524,8 +527,8 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/2.jpg " width="370 " height="287 "
-                                        alt="Image-HasTech ">
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/2.jpg " width="370 "
+                                        height="287 " alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
                                     <h5 class="product-banner-desc ">Get 50% Off</h5>
@@ -541,8 +544,8 @@
                             <!--== Start Product Banner Item ==-->
                             <div class="product-banner-item ">
                                 <div class="product-banner-thumb ">
-                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/3.jpg " width="370 " height="287 "
-                                        alt="Image-HasTech ">
+                                    <img src="<?= BASE_URL ?>/public/images/shop/banner/3.jpg " width="370 "
+                                        height="287 " alt="Image-HasTech ">
                                 </div>
                                 <div class="product-banner-content ">
                                     <h5 class="product-banner-desc ">Get 50% Off</h5>
@@ -562,7 +565,8 @@
             <!--== Start News Letter Area Wrapper ==-->
             <div class="newsletter-area section-top-space bg-img ">
                 <div class="container ">
-                    <div class="newsletter-three-content-wrap " data-bg-img="<?= BASE_URL ?>/public/images/photos/bg3.jpg ">
+                    <div class="newsletter-three-content-wrap "
+                        data-bg-img="<?= BASE_URL ?>/public/images/photos/bg3.jpg ">
                         <div class="newsletter-three-content ">
                             <h2 class="title text-white mt-n2 ">Join Our Newsletter</h2>
                             <p class="text-white ">Join our newsletter and get <span>$20</span> discount for your first
@@ -584,4 +588,5 @@
 <!--== Start Footer Area Wrapper ==-->
 <?php include_once("partical/footer.php"); ?>
 <!--== End Footer Area Wrapper ==-->
+
 </html>
