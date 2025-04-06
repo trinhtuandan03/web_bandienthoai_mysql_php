@@ -12,41 +12,14 @@
 
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
-            <div class="header-top d-none d-md-block">
-                <div class="container">
-                    <div class="header-top-area">
-                        <div class="header-top-info">
-                            <a href="shop.html">Hoàn toàn miễn phí trả lại và miễn phí vận chuyển trên toàn thế giới</a>
-                        </div>
-                        <div class="header-top-action-area">
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownLang"
-                                    data-bs-toggle="dropdown" aria-expanded="false">English</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <li class="dropdown-item active">English</li>
-                                    <li class="dropdown-item">Việt Nam </li>
-                                </ul>
-                            </div>
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownCurrency"
-                                    data-bs-toggle="dropdown" aria-expanded="false">USD</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">
-                                    <li class="dropdown-item active">USD</li>
-                                    <li class="dropdown-item">VN</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="header-middle">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="index.html">
-                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo.png" width="182"
-                                        height="31" alt="Logo">
+                                    <span class="logo-main" style="font-size: 24px; font-weight: bold;">NHÓM 5 CON
+                                        BÁO</span>
                                 </a>
                             </div>
                         </div>

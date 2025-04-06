@@ -8,48 +8,21 @@
     <div class="wrapper">
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
-            <div class="header-top d-none d-md-block">
-                <div class="container">
-                    <div class="header-top-area">
-                        <div class="header-top-info">
-                            <a href="/product">Hoàn toàn miễn phí trả lại và miễn phí vận chuyển trên toàn thế giới</a>
-                        </div>
-                        <div class="header-top-action-area">
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownLang"
-                                    data-bs-toggle="dropdown" aria-expanded="false">English</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <li class="dropdown-item active">English</li>
-                                    <li class="dropdown-item">Việt Nam </li>
-                                </ul>
-                            </div>
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownCurrency"
-                                    data-bs-toggle="dropdown" aria-expanded="false">USD</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">
-                                    <li class="dropdown-item active">USD</li>
-                                    <li class="dropdown-item">VN</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="header-middle">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="/home">
-                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo.png" width="182" height="31"
-                                        alt="Logo">
+                                    <span class="logo-main" style="font-size: 24px; font-weight: bold;">NHÓM 5 CON
+                                        BÁO</span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-auto">
                             <div class="header-action d-flex justify-content-end align-items-center">
                                 <form class="header-search-box d-none d-lg-block">
-                                    <input class="form-control" type="text" id="search" placeholder="Search Products">
+                                    <input class="form-control" type="text" id="search" placeholder="Tìm Kiếm">
                                     <button type="submit" class="btn-src">
                                         <i class="icon-magnifier"></i>
                                     </button>
@@ -58,7 +31,8 @@
                                     data-bs-target="#AsideOffcanvasSearch" aria-controls="AsideOffcanvasSearch">
                                     <i class="search-icon icon-magnifier"></i>
                                 </button>
-                                <a href="/web_bandienthoai_mysql_php/account/login" class="header-action-account d-none d-lg-block">Login /
+                                <a href="/web_bandienthoai_mysql_php/account/login"
+                                    class="header-action-account d-none d-lg-block">Login /
                                     SignUp</a>
                                 <a href="login-register.html" class="header-action-user d-lg-none">
                                     <i class="icon icon-user"></i>
@@ -83,47 +57,6 @@
             <div class="header-area d-none d-lg-block">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-auto">
-                            <div class="vertical-menu">
-                                <button class="vmenu-btn"><i class="icon fa fa-list-ul"></i> All Departments <i
-                                        class="icon fa fa-angle-down"></i></button>
-                                <ul class="vmenu-content vmenu-content-none">
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm1.png"
-                                                    alt="Icon"></span> Headphone</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm2.png"
-                                                    alt="Icon"></span> Video Game</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm3.png"
-                                                    alt="Icon"></span> Protable Speakers</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm4.png"
-                                                    alt="Icon"></span> Digital Camera</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm5.png"
-                                                    alt="Icon"></span> Gadgets</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm6.png"
-                                                    alt="Icon"></span> Home Appliances</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm7.png"
-                                                    alt="Icon"></span> Audio Record</a>
-                                    </li>
-                                    <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm8.png"
-                                                    alt="Icon"></span> Computer/Laptop</a>
-                                    </li>
-                                </ul>
-                                <!-- menu content -->
-                            </div>
-                        </div>
                         <div class="col-auto d-none d-lg-block ms-auto me-n3 pe-0">
                             <div class="header-navigation ps-6">
                                 <?php include_once("partical/menu.php"); ?>
@@ -148,16 +81,6 @@
             </div>
         </header>
         <!--== End Header Wrapper ==-->
-
-
-
-
-
-
-
-
-
-
         <main class="main-content">
 
             <!--== Start Page Header Area Wrapper ==-->
@@ -175,8 +98,8 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="page-header-thumb">
-                                <img src="<?= BASE_URL ?>/public/images/photos/page-title.png" alt="Image-HasTech" width="546"
-                                    height="281">
+                                <img src="<?= BASE_URL ?>/public/images/photos/page-title.png" alt="Image-HasTech"
+                                    width="546" height="281">
                             </div>
                         </div>
                     </div>
@@ -191,7 +114,7 @@
                         <div class="row">
                             <div class="col-lg-5 col-xl-4">
                                 <div class="contact-info-area">
-                                    <h3 class="contact-info-area-title text-black">Contact Info</h3>
+                                    <h3 class="contact-info-area-title text-black">Liên Hệ</h3>
 
                                     <!--== Start Contact Info Item ==-->
                                     <div class="contact-info-item">
@@ -199,8 +122,8 @@
                                             <img src="<?= BASE_URL ?>/public/images/icons/pin2.png" alt="Icon">
                                         </div>
                                         <div class="contact-info-content">
-                                            <h4 class="contact-info-title mb-2 mt-n1">Head Office</h4>
-                                            <p>Your address here <span>54/X, New Down City</span></p>
+                                            <h4 class="contact-info-title mb-2 mt-n1">Địa Chỉ</h4>
+                                            <p>Thủ Đức <span>TP.HCM</span></p>
                                         </div>
                                     </div>
                                     <!--== End Contact Info Item ==-->
@@ -212,8 +135,7 @@
                                         </div>
                                         <div class="contact-info-content">
                                             <h4 class="contact-info-title mb-2 mt-n1">Phone</h4>
-                                            <a href="tel://+00123456789 ">+00 123 456 789</a>
-                                            <a href="tel://+00123456989">+00 123 456 989</a>
+                                            <a href="tel://+00123456789 ">0336656538</a>
                                         </div>
                                     </div>
                                     <!--== End Contact Info Item ==-->
@@ -225,8 +147,7 @@
                                         </div>
                                         <div class="contact-info-content">
                                             <h4 class="contact-info-title mt-n1">Email</h4>
-                                            <a href="mailto://demo@example.com">youremail@demo.com</a>
-                                            <a href="mailto://example@demo.info">www.yoursite.web</a>
+                                            <a href="mailto://demo@example.com">trinhtuandan1601@gmail.com</a>
                                         </div>
                                     </div>
                                     <!--== End Contact Info Item ==-->
@@ -234,7 +155,7 @@
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-7 col-xl-8">
                                 <div class="contact-form-area">
-                                    <h3 class="contact-form-title text-black">Get In Touch</h3>
+                                    <h3 class="contact-form-title text-black">Liên Lạc Với Chúng Tôi</h3>
                                     <!--== Start Contact Form ==-->
                                     <form class="contact-form" id="contact-form"
                                         action="https://htmldemo.net/elehaus/elehaus/assets/php/mail.php" method="post">
@@ -242,28 +163,28 @@
                                             <div class="col-md-6">
                                                 <div class="form-input-item">
                                                     <input class="form-control" type="text" name="con_name" id="name"
-                                                        placeholder="Your Name">
+                                                        placeholder="Họ Tên">
                                                     <i class="icon fa fa-user"></i>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-input-item">
                                                     <input class="form-control" type="email" name="con_email" id="mail"
-                                                        placeholder="Enter Your Mail">
+                                                        placeholder="Gmail">
                                                     <i class="icon fa fa-envelope"></i>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-input-item">
                                             <input class="form-control" type="text" name="con_subject" id="subject"
-                                                placeholder="Your Subject">
+                                                placeholder="Số Điện Thoại">
                                             <i class="icon fa fa-phone-square"></i>
                                         </div>
                                         <div class="form-input-item">
                                             <textarea class="form-control" name="con_message" id="message"
-                                                placeholder="Your Message"></textarea>
+                                                placeholder="Nội Dung"></textarea>
                                         </div>
-                                        <button class="btn btn-theme btn-submit mt-2" type="submit">Submit Now <i
+                                        <button class="btn btn-theme btn-submit mt-2" type="submit">Gửi<i
                                                 class="icon fa fa-arrow-right"></i></button>
                                     </form>
                                     <!--== End Contact Form ==-->

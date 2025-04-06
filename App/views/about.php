@@ -6,45 +6,16 @@
 
     <!--== Wrapper Start ==-->
     <div class="wrapper">
-
-
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
-            <div class="header-top d-none d-md-block">
-                <div class="container">
-                    <div class="header-top-area">
-                        <div class="header-top-info">
-                            <a href="/home">Hoàn toàn miễn phí trả lại và miễn phí vận chuyển trên toàn thế giới</a>
-                        </div>
-                        <div class="header-top-action-area">
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownLang"
-                                    data-bs-toggle="dropdown" aria-expanded="false">English</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <li class="dropdown-item active">English</li>
-                                    <li class="dropdown-item">Việt Nam </li>
-                                </ul>
-                            </div>
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownCurrency"
-                                    data-bs-toggle="dropdown" aria-expanded="false">USD</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">
-                                    <li class="dropdown-item active">USD</li>
-                                    <li class="dropdown-item">VN </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="header-middle">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="/home">
-                                    <img class="logo-main" src="./public/images/logo.png" width="182" height="31"
-                                        alt="Logo">
+                                    <span class="logo-main" style="font-size: 24px; font-weight: bold;">NHÓM 5 CON
+                                        BÁO</span>
                                 </a>
                             </div>
                         </div>
@@ -182,7 +153,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="ps-lg-10 pe-lg-10 ms-lg-2 me-lg-2 mb-10 mb-lg-0 text-center text-lg-start">
-                                <img src="./public/images/photos/d1.jpg" alt="Image-HasTech" width="449" height="550">
+                                <img src="./public/images/team/dan.jpg" alt="Image-HasTech" width="449" height="550">
                             </div>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
@@ -206,11 +177,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="./public/images/team/1.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/dan.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
-                                    <h4 class="team-title mt-n1">Kiersten Lange</h4>
-                                    <h5 class="team-reg">Chif Admin</h5>
+                                    <h4 class="team-title mt-n1">Trịnh Tuấn Đan</h4>
+                                    <h5 class="team-reg">backend</h5>
                                     <div class="social-items">
                                         <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
                                                 class="fa fa-facebook"></i></a>
@@ -227,11 +198,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="./public/images/team/2.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/duc.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
-                                    <h4 class="team-title mt-n1">Monroe Bond</h4>
-                                    <h5 class="team-reg">Chif Admin</h5>
+                                    <h4 class="team-title mt-n1">Nguyễn Văn Đức</h4>
+                                    <h5 class="team-reg">Fontend</h5>
                                     <div class="social-items">
                                         <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
                                                 class="fa fa-facebook"></i></a>
@@ -248,11 +219,32 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
                             <div class="team-item">
                                 <div class="team-thumb">
-                                    <img class="w-100" src="./public/images/team/3.jpg" alt="Image-HasTech">
+                                    <img class="w-100" src="./public/images/team/hien.jpg" alt="Image-HasTech">
                                 </div>
                                 <div class="team-info">
-                                    <h4 class="team-title mt-n1">Raymond Atkins</h4>
-                                    <h5 class="team-reg">Chif Admin</h5>
+                                    <h4 class="team-title mt-n1">Nguyễn Thị Thúy Hiền</h4>
+                                    <h5 class="team-reg">UI/UX</h5>
+                                    <div class="social-items">
+                                        <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
+                                                class="fa fa-facebook"></i></a>
+                                        <a href="https://www.twitter.com/" target="_blank" rel="noopener"><i
+                                                class="fa fa-twitter"></i></a>
+                                        <a href="https://www.dribbble.com/" target="_blank" rel="noopener"><i
+                                                class="fa fa-dribbble"></i></a>
+                                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener"><i
+                                                class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 mb-6">
+                            <div class="team-item">
+                                <div class="team-thumb">
+                                    <img class="w-100" src="./public/images/team/tuyet.jpg" alt="Image-HasTech">
+                                </div>
+                                <div class="team-info">
+                                    <h4 class="team-title mt-n1">Thái Thị Ánh Tuyết</h4>
+                                    <h5 class="team-reg">UI/UX</h5>
                                     <div class="social-items">
                                         <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
                                                 class="fa fa-facebook"></i></a>
@@ -270,216 +262,6 @@
                 </div>
             </div>
             <!--== End Team Area ==-->
-
-            <!--== Start Testimonial Area ==-->
-            <div class="testimonial-area section-space bg-img" data-bg-img="./public/images/photos/bg1.jpg">
-                <div class="container">
-                    <div class="section-title text-center">
-                        <h2 class="title text-white mt-n2 mb-n1">Customer Review</h2>
-                    </div>
-                    <div class="swiper-button-style2 mb-n3">
-                        <div class="swiper testimonial-slider-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="testimonial-content">
-                                        <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
-                                            ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
-                                            width="69" height="65">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <div class="client-thumb">
-                                            <img src="./public/images/photos/client1.png" alt="Image" width="94"
-                                                height="94">
-                                        </div>
-                                        <div class="info">
-                                            <h4 class="name">Merida Swan</h4>
-                                            <h5 class="designation">Chairman</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="testimonial-content">
-                                        <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
-                                            ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
-                                            width="69" height="65">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <div class="client-thumb">
-                                            <img src="./public/images/photos/client2.png" alt="Image" width="94"
-                                                height="94">
-                                        </div>
-                                        <div class="info">
-                                            <h4 class="name">Demetri Caron</h4>
-                                            <h5 class="designation">Customer</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="testimonial-content">
-                                        <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
-                                            ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
-                                            width="69" height="65">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <div class="client-thumb">
-                                            <img src="./public/images/photos/client3.png" alt="Image" width="94"
-                                                height="94">
-                                        </div>
-                                        <div class="info">
-                                            <h4 class="name">Anaiah Whitten</h4>
-                                            <h5 class="designation">HR Head</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide testimonial-item">
-                                    <div class="testimonial-content">
-                                        <p>Lorem ipsum dolor sit amet, consl adipi elit, sed do eiusmod tempor incididu
-                                            ut labore et dolore magn aliqua Ut enim admin.</p>
-                                        <img class="icon-quote" src="./public/images/icons/quote1.png" alt="Image"
-                                            width="69" height="65">
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <div class="client-thumb">
-                                            <img src="./public/images/photos/client4.png" alt="Image" width="94"
-                                                height="94">
-                                        </div>
-                                        <div class="info">
-                                            <h4 class="name">Juidan Swan</h4>
-                                            <h5 class="designation">Customer</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--== Start Swiper Navigation ==-->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                </div>
-            </div>
-            <!--== End Testimonial Area ==-->
-
-            <!--== Start Features Area Wrapper ==-->
-            <div class="features-area section-top-space">
-                <div class="container">
-                    <div class="row mb-n8 mt-n2">
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <img src="./public/images/icons/1.png" width="44" height="38" alt="Icon">
-                                </div>
-                                <div class="feature-content">
-                                    <h4 class="feature-title">Support 24/7</h4>
-                                    <p>Delicated 24/7 Support</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <img src="./public/images/icons/2.png" width="38" height="38" alt="Icon">
-                                </div>
-                                <div class="feature-content">
-                                    <h4 class="feature-title">Easy Returns</h4>
-                                    <p>Shop With Confidence</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <img src="./public/images/icons/3.png" width="48" height="38" alt="Icon">
-                                </div>
-                                <div class="feature-content">
-                                    <h4 class="feature-title">Card Payment</h4>
-                                    <p>12 Months Installments</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item border-0">
-                                <div class="feature-icon">
-                                    <img src="./public/images/icons/4.png" width="50" height="38" alt="Icon">
-                                </div>
-                                <div class="feature-content">
-                                    <h4 class="feature-title">Free Shipping</h4>
-                                    <p>Capped at $50 per order</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--== End Features Area Wrapper ==-->
-
-            <!--== Start Gallery Area Wrapper ==-->
-            <div class="gallery-area section-space">
-                <div class="container">
-                    <div class="section-title text-center">
-                        <h2 class="title mb-n1 mt-n2">Follow <span class="text-primary">@Elehaus</span> on Instagram
-                        </h2>
-                    </div>
-                    <div class="row row-cols-3 row-cols-sm-3 row-cols-lg-5 gx-4 mb-n6 justify-content-center">
-                        <div class="col mb-6">
-                            <div class="gallery-item">
-                                <img src="./public/images/photos/gallery1.png" alt="Instagram Image">
-                                <a class="gallery-overlay" target="_blank" rel="noopener"
-                                    href="https://www.instagram.com/">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-6">
-                            <div class="gallery-item">
-                                <img src="./public/images/photos/gallery2.png" alt="Instagram Image">
-                                <a class="gallery-overlay" target="_blank" rel="noopener"
-                                    href="https://www.instagram.com/">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-6">
-                            <div class="gallery-item">
-                                <img src="./public/images/photos/gallery3.png" alt="Instagram Image">
-                                <a class="gallery-overlay" target="_blank" rel="noopener"
-                                    href="https://www.instagram.com/">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-6">
-                            <div class="gallery-item">
-                                <img src="./public/images/photos/gallery4.png" alt="Instagram Image">
-                                <a class="gallery-overlay" target="_blank" rel="noopener"
-                                    href="https://www.instagram.com/">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col mb-6">
-                            <div class="gallery-item">
-                                <img src="./public/images/photos/gallery5.png" alt="Instagram Image">
-                                <a class="gallery-overlay" target="_blank" rel="noopener"
-                                    href="https://www.instagram.com/">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--== End Gallery Area Wrapper ==-->
         </main>
     </div>
 </body>

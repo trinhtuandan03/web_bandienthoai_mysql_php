@@ -12,41 +12,14 @@
 
         <!--== Start Header Wrapper ==-->
         <header class="header-wrapper">
-            <div class="header-top d-none d-md-block">
-                <div class="container">
-                    <div class="header-top-area">
-                        <div class="header-top-info">
-                            <a href="shop.html">World Wide Completely Free Returns and Free Shipping</a>
-                        </div>
-                        <div class="header-top-action-area">
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownLang"
-                                    data-bs-toggle="dropdown" aria-expanded="false">English</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <li class="dropdown-item active">English</li>
-                                    <li class="dropdown-item">Français</li>
-                                </ul>
-                            </div>
-                            <div class="header-info-dropdown">
-                                <button type="button" class="btn-info dropdown-toggle" id="dropdownCurrency"
-                                    data-bs-toggle="dropdown" aria-expanded="false">USD</button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownCurrency">
-                                    <li class="dropdown-item active">USD</li>
-                                    <li class="dropdown-item">EUR</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="header-middle">
                 <div class="container">
                     <div class="row align-items-center justify-content-between align-items-center">
                         <div class="col-auto">
                             <div class="header-logo-area">
                                 <a href="index.html">
-                                    <img class="logo-main" src="<?= BASE_URL ?>/public/images/logo.png" width="182" height="31"
-                                        alt="Logo">
+                                    <span class="logo-main" style="font-size: 24px; font-weight: bold;">NHÓM 5 CON
+                                        BÁO</span>
                                 </a>
                             </div>
                         </div>
@@ -93,40 +66,48 @@
                                         class="icon fa fa-angle-down"></i></button>
                                 <ul class="vmenu-content vmenu-content-none">
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm1.png"
-                                                    alt="Icon"></span> Headphone</a>
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm1.png" alt="Icon"></span>
+                                            Headphone</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm2.png"
-                                                    alt="Icon"></span> Video Game</a>
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm2.png" alt="Icon"></span>
+                                            Video Game</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm3.png"
-                                                    alt="Icon"></span> Protable Speakers
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm3.png" alt="Icon"></span>
+                                            Protable Speakers
                                         </a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm4.png"
-                                                    alt="Icon"></span> Digital Camera
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm4.png" alt="Icon"></span>
+                                            Digital Camera
                                         </a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm5.png"
-                                                    alt="Icon"></span> Gadgets</a>
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm5.png" alt="Icon"></span>
+                                            Gadgets</a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm6.png"
-                                                    alt="Icon"></span> Home Appliances
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm6.png" alt="Icon"></span>
+                                            Home Appliances
                                         </a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm7.png"
-                                                    alt="Icon"></span> Audio Record
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm7.png" alt="Icon"></span>
+                                            Audio Record
                                         </a>
                                     </li>
                                     <li class="vmenu-item">
-                                        <a href="shop.html"> <span class="icon"><img src="<?= BASE_URL ?>/public/images/icons/vm8.png"
-                                                    alt="Icon"></span> Computer/Laptop
+                                        <a href="shop.html"> <span class="icon"><img
+                                                    src="<?= BASE_URL ?>/public/images/icons/vm8.png" alt="Icon"></span>
+                                            Computer/Laptop
                                         </a>
                                     </li>
                                 </ul>
@@ -135,7 +116,7 @@
                         </div>
                         <div class="col-auto d-none d-lg-block ms-auto me-n3 pe-0">
                             <div class="header-navigation ps-6">
-                            <?php include_once(__DIR__ . '/../partical/menu.php'); ?>
+                                <?php include_once(__DIR__ . '/../partical/menu.php'); ?>
                             </div>
                         </div>
                         <div class="col-auto">
@@ -184,8 +165,8 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="page-header-thumb">
-                                <img src="<?= BASE_URL ?>/public/images/photos/page-title.png" alt="Image-HasTech" width="546"
-                                    height="281">
+                                <img src="<?= BASE_URL ?>/public/images/photos/page-title.png" alt="Image-HasTech"
+                                    width="546" height="281">
                             </div>
                         </div>
                     </div>
@@ -215,8 +196,8 @@
                                             <tr>
                                                 <td class="product-thumbnail">
                                                     <a href="shop-single-product.html"><img class="w-100"
-                                                            src="<?= BASE_URL ?>/public/images/shop/w1.png" alt="Image" width="96"
-                                                            height="96"></a>
+                                                            src="<?= BASE_URL ?>/public/images/shop/w1.png" alt="Image"
+                                                            width="96" height="96"></a>
                                                 </td>
                                                 <td class="product-name">
                                                     <h5><a href="shop-single-product.html">D-Phone Android</a></h5>
@@ -236,8 +217,8 @@
                                             <tr>
                                                 <td class="product-thumbnail">
                                                     <a href="shop-single-product.html"><img class="w-100"
-                                                            src="<?= BASE_URL ?>/public/images/shop/w2.png" alt="Image" width="96"
-                                                            height="96"></a>
+                                                            src="<?= BASE_URL ?>/public/images/shop/w2.png" alt="Image"
+                                                            width="96" height="96"></a>
                                                 </td>
                                                 <td class="product-name">
                                                     <h5><a href="shop-single-product.html">Digital Lens Camera</a></h5>
@@ -257,8 +238,8 @@
                                             <tr>
                                                 <td class="product-thumbnail">
                                                     <a href="shop-single-product.html"><img class="w-100"
-                                                            src="<?= BASE_URL ?>/public/images/shop/w3.png" alt="Image" width="96"
-                                                            height="96"></a>
+                                                            src="<?= BASE_URL ?>/public/images/shop/w3.png" alt="Image"
+                                                            width="96" height="96"></a>
                                                 </td>
                                                 <td class="product-name">
                                                     <h5><a href="shop-single-product.html">Headphone Supersonic</a></h5>

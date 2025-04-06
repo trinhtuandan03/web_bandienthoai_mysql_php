@@ -2,11 +2,14 @@
 class AccountModel
 {
     private $conn;
+
     private $table_name = "account";
+
     public function __construct($db)
     {
         $this->conn = $db;
     }
+
     public function getAccountByUsername($username)
     {
         $query = "SELECT * FROM account WHERE username = :username";
@@ -16,6 +19,7 @@ class AccountModel
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result;
     }
+
     function save($username, $fullname, $password, $role = "user")
     {
         $query = "INSERT INTO " . $this->table_name . " (username, fullname, password, role) VALUES (:username, :fullname, :password, :role)";
