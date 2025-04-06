@@ -33,6 +33,12 @@ class ProductApiController
     public function store()
     {
         header('Content-Type: application/json');
+        if (!$this->authenticate()) {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized (Không được phép)']);
+            return;
+        }
+        //----------------------------------------------------
         $data = json_decode(file_get_contents("php://input"), true);
         $name = $data['name'] ?? '';
         $description = $data['description'] ?? '';
@@ -91,6 +97,12 @@ class ProductApiController
     public function update($id)
     {
         header('Content-Type: application/json');
+        if (!$this->authenticate()) {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized (Không được phép)']);
+            return;
+        }
+        //----------------------------------------------------
         $data = json_decode(file_get_contents("php://input"), true);
 
         $name = $data['name'] ?? '';
@@ -124,6 +136,12 @@ class ProductApiController
     public function destroy($id)
     {
         header('Content-Type: application/json');
+        if (!$this->authenticate()) {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized (Không được phép)']);
+            return;
+        }
+        //----------------------------------------------------
         $result = $this->productModel->deleteProduct($id);
         if ($result) {
             echo json_encode(['message' => 'Product deleted successfully( Xóa sản phẩm thành công)']);

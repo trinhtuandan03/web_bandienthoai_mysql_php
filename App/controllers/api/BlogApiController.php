@@ -1,19 +1,19 @@
 <?php
 require_once('app/config/database.php');
-require_once('app/models/CategoryModel.php');
-require_once('app/utils/JWTHandler.php');
-class CategoryApiController
+require_once('app/models/BlogModel.php');
+require_once('app/utils/JWTHandler.php'); //
+class BlogApiController
 {
-    private $categoryModel;
+    private $blogModel;
     private $db;
     private $jwtHandler;
+
     public function __construct()
     {
         $this->db = (new Database())->getConnection();
-        $this->categoryModel = new CategoryModel($this->db);
+        $this->blogModel = new BlogModel($this->db);
         $this->jwtHandler = new JWTHandler();
     }
-
     private function authenticate()
     {
         $headers = apache_request_headers();
@@ -28,8 +28,7 @@ class CategoryApiController
         }
         return false;
     }
-    //-------------------------------------------------------------------
-    // Thêm Category mới
+    // Thêm bài viết mới
     public function store()
     {
         header('Content-Type: application/json');
@@ -40,41 +39,49 @@ class CategoryApiController
         }
         //----------------------------------------------------
         $data = json_decode(file_get_contents("php://input"), true);
-        $name = $data['name'] ?? '';
-        $description = $data['description'] ?? '';
 
-        $result = $this->categoryModel->addCategory($name, $description);
+        $title = $data['title'] ?? '';
+        $content = $data['content'] ?? '';
+        $thumbnail = $data['thumbnail'] ?? null;
+        $account_id = $data['account_id'] ?? null;
+
+        $result = $this->blogModel->addBlog($title, $content, $thumbnail, $account_id);
+
         if (is_array($result)) {
             http_response_code(400);
             echo json_encode(['errors' => $result]);
         } else {
+            $newBlog = $this->blogModel->getBlogById($this->db->lastInsertId());
             http_response_code(201);
-            echo json_encode(['message' => 'Category created successfully (Danh mục đã được tạo thành công)']);
+            echo json_encode([
+                'message' => 'Blog created successfully',
+                'blog' => $newBlog
+            ]);
         }
     }
 
-    // Lấy danh sách Category
+    // Lấy danh sách bài viết
     public function index()
     {
         header('Content-Type: application/json');
-        $categories = $this->categoryModel->getCategories();
-        echo json_encode($categories);
+        $blogs = $this->blogModel->getBlogs();
+        echo json_encode($blogs);
     }
 
-    // Lấy thông tin Category theo ID
+    // Lấy thông tin bài viết theo ID
     public function show($id)
     {
         header('Content-Type: application/json');
-        $category = $this->categoryModel->getCategoryById($id);
-        if ($category) {
-            echo json_encode($category);
+        $blog = $this->blogModel->getBlogById($id);
+        if ($blog) {
+            echo json_encode($blog);
         } else {
             http_response_code(404);
-            echo json_encode(['message' => 'Category not found (Danh mục không tồn tại)']);
+            echo json_encode(['message' => 'Blog not found']);
         }
     }
 
-    // Cập nhật Category theo ID
+    // Cập nhật bài viết theo ID
     public function update($id)
     {
         header('Content-Type: application/json');
@@ -84,22 +91,23 @@ class CategoryApiController
             return;
         }
         //----------------------------------------------------
-
         $data = json_decode(file_get_contents("php://input"), true);
 
-        $name = $data['name'] ?? '';
-        $description = $data['description'] ?? '';
+        $title = $data['title'] ?? '';
+        $content = $data['content'] ?? '';
+        $thumbnail = $data['thumbnail'] ?? null;
 
-        $result = $this->categoryModel->updateCategory($id, $name, $description);
+        $result = $this->blogModel->updateBlog($id, $title, $content, $thumbnail);
+
         if ($result) {
-            echo json_encode(['message' => 'Category updated successfully (Cập nhật danh mục thành công)']);
+            echo json_encode(['message' => 'Blog updated successfully']);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Category update failed (Cập nhật danh mục thất bại)']);
+            echo json_encode(['message' => 'Blog update failed']);
         }
     }
 
-    // Xóa Category theo ID
+    // Xóa bài viết theo ID
     public function destroy($id)
     {
         header('Content-Type: application/json');
@@ -109,12 +117,13 @@ class CategoryApiController
             return;
         }
         //----------------------------------------------------
-        $result = $this->categoryModel->deleteCategory($id);
+
+        $result = $this->blogModel->deleteBlog($id);
         if ($result) {
-            echo json_encode(['message' => 'Category deleted successfully (Xóa danh mục thành công)']);
+            echo json_encode(['message' => 'Blog deleted successfully']);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Category deletion failed (Xóa danh mục thất bại)']);
+            echo json_encode(['message' => 'Blog deletion failed']);
         }
     }
 }
