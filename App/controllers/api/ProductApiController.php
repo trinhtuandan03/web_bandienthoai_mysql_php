@@ -28,30 +28,7 @@ class ProductApiController
         }
         return false;
     }
-    // Lấy danh sách sản phẩm
-    public function index()
-    {
-        if ($this->authenticate()) {
-            header('Content-Type: application/json');
-            $products = $this->productModel->getProducts();
-            echo json_encode($products);
-        } else {
-            http_response_code(401);
-            echo json_encode(['message' => 'Unauthorized']);
-        }
-    }
-    // Lấy thông tin sản phẩm theo ID
-    public function show($id)
-    {
-        header('Content-Type: application/json');
-        $product = $this->productModel->getProductById($id);
-        if ($product) {
-            echo json_encode($product);
-        } else {
-            http_response_code(404);
-            echo json_encode(['message' => 'Product not found']);
-        }
-    }
+
     // Thêm sản phẩm mới
     public function store()
     {
@@ -74,33 +51,73 @@ class ProductApiController
             http_response_code(400);
             echo json_encode(['errors' => $result]);
         } else {
+            // Lấy thông tin sản phẩm vừa được thêm
+            $newProduct = $this->productModel->getProductById($this->db->lastInsertId());
+
+            // Trả về phản hồi JSON với thông tin sản phẩm
             http_response_code(201);
-            echo json_encode(['message' => 'Product created successfully']);
+            echo json_encode([
+                'message' => 'Product created successfully( Sản phẩm đã được tạo thành công)',
+                'product' => $newProduct
+            ]);
         }
     }
+    // Lấy danh sách sản phẩm
+    public function index()
+    {
+        if ($this->authenticate()) {
+            header('Content-Type: application/json');
+            $products = $this->productModel->getProducts();
+            echo json_encode($products);
+        } else {
+            http_response_code(response_code: 401);
+            echo json_encode(['message' => 'Unauthorized']);
+        }
+    }
+    // Lấy thông tin sản phẩm theo ID
+    public function show($id)
+    {
+        header('Content-Type: application/json');
+        $product = $this->productModel->getProductById($id);
+        if ($product) {
+            echo json_encode($product);
+        } else {
+            http_response_code(404);
+            echo json_encode(['message' => 'Product not found(Sản phẩm không tồn tại)']);
+        }
+    }
+
     // Cập nhật sản phẩm theo ID
     public function update($id)
     {
         header('Content-Type: application/json');
         $data = json_decode(file_get_contents("php://input"), true);
+
         $name = $data['name'] ?? '';
         $description = $data['description'] ?? '';
         $price = $data['price'] ?? '';
         $category_id = $data['category_id'] ?? null;
-        $result = $this->productModel->addProduct(
+        $image1 = $data['image1'] ?? null;
+        $image2 = $data['image2'] ?? null;
+        $image3 = $data['image3'] ?? null;
+
+        // Gọi phương thức updateProduct() để cập nhật sản phẩm
+        $result = $this->productModel->updateProduct(
+            $id,
             $name,
             $description,
             $price,
             $category_id,
-            $data['image1'] ?? null,
-            $data['image2'] ?? null,
-            $data['image3'] ?? null
+            $image1,
+            $image2,
+            $image3
         );
+
         if ($result) {
-            echo json_encode(['message' => 'Product updated successfully']);
+            echo json_encode(['message' => 'Product updated successfully (Cập nhật sản phẩm thành công)']);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Product update failed']);
+            echo json_encode(['message' => 'Product update failed (Cập nhật sản phẩm thất bại)']);
         }
     }
     // Xóa sản phẩm theo ID
@@ -109,10 +126,10 @@ class ProductApiController
         header('Content-Type: application/json');
         $result = $this->productModel->deleteProduct($id);
         if ($result) {
-            echo json_encode(['message' => 'Product deleted successfully']);
+            echo json_encode(['message' => 'Product deleted successfully( Xóa sản phẩm thành công)']);
         } else {
             http_response_code(400);
-            echo json_encode(['message' => 'Product deletion failed']);
+            echo json_encode(['message' => 'Product deletion failed( Xóa sản phẩm thất bại)']);
         }
     }
 }

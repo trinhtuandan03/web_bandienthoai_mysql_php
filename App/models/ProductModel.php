@@ -7,26 +7,7 @@ class ProductModel
     {
         $this->conn = $db;
     }
-    public function getProducts()
-    {
-        $query = "SELECT p.id, p.name, p.description, p.price, 
-p.image1, p.image2, p.image3, c.name as category_name
-FROM " . $this->table_name . " p
-LEFT JOIN category c ON p.category_id = c.id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
-        return $result;
-    }
-    public function getProductById($id)
-    {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE id = :id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_OBJ);
-        return $result;
-    }
+    //thêm sản phẩm
     public function addProduct($name, $description, $price, $category_id, $image1, $image2, $image3)
     {
         $errors = [];
@@ -65,13 +46,45 @@ VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3)";
         }
         return false;
     }
+    // Lấy danh sách phẩm
+    public function getProducts()
+    {
+        $query = "SELECT p.id, p.name, p.description, p.price, 
+p.image1, p.image2, p.image3, c.name as category_name
+FROM " . $this->table_name . " p
+LEFT JOIN category c ON p.category_id = c.id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+        return $result;
+    }
+    // Lấy sản phẩm theo ID
+    public function getProductById($id)
+    {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
+        return $result;
+    }
+
+    // Cập nhật sản phẩm
     public function updateProduct($id, $name, $description, $price, $category_id, $image1, $image2, $image3)
     {
         $query = "UPDATE " . $this->table_name . " SET 
-name=:name, description=:description, price=:price, 
-category_id=:category_id, image1=:image1, image2=:image2, image3=:image3 
-WHERE id=:id";
+        name = :name, 
+        description = :description, 
+        price = :price, 
+        category_id = :category_id, 
+        image1 = :image1, 
+        image2 = :image2, 
+        image3 = :image3 
+        WHERE id = :id";
+
         $stmt = $this->conn->prepare($query);
+
+        // Làm sạch dữ liệu
         $name = htmlspecialchars(strip_tags($name));
         $description = htmlspecialchars(strip_tags($description));
         $price = htmlspecialchars(strip_tags($price));
@@ -79,6 +92,8 @@ WHERE id=:id";
         $image1 = htmlspecialchars(strip_tags($image1));
         $image2 = htmlspecialchars(strip_tags($image2));
         $image3 = htmlspecialchars(strip_tags($image3));
+
+        // Gán dữ liệu vào câu lệnh
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':description', $description);
@@ -87,11 +102,14 @@ WHERE id=:id";
         $stmt->bindParam(':image1', $image1);
         $stmt->bindParam(':image2', $image2);
         $stmt->bindParam(':image3', $image3);
+
+        // Thực thi câu lệnh
         if ($stmt->execute()) {
             return true;
         }
         return false;
     }
+    // Xóa sản phẩm
     public function deleteProduct($id)
     {
         $query = "DELETE FROM " . $this->table_name . " WHERE id=:id";

@@ -13,6 +13,22 @@ class AccountApiController
         $this->accountModel = new AccountModel($this->db);
         $this->jwtHandler = new JWTHandler();
     }
+
+    private function authenticate()
+    {
+        $headers = apache_request_headers();
+        if (isset($headers['Authorization'])) {
+            $authHeader = $headers['Authorization'];
+            $arr = explode(" ", $authHeader);
+            $jwt = $arr[1] ?? null;
+            if ($jwt) {
+                $decoded = $this->jwtHandler->decode($jwt);
+                return $decoded ? true : false;
+            }
+        }
+        return false;
+    }
+
     public function register()
     {
         header('Content-Type: application/json');
@@ -168,6 +184,91 @@ class AccountApiController
         } else {
             http_response_code(401);
             echo json_encode(['message' => 'Invalid credentials']);
+        }
+    }
+
+
+    //-------------------------------------------------------------------------------------
+    // Lấy danh sách Người Dùng
+    public function index()
+    {
+        if ($this->authenticate()) {
+            header('Content-Type: application/json');
+            $users = $this->accountModel->getAccounts();
+            echo json_encode($users);
+        } else {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized']);
+        }
+    }
+
+
+    // Lấy thông tin Người Dùng theo ID
+    public function show($id)
+    {
+        if ($this->authenticate()) {
+            header('Content-Type: application/json');
+            $user = $this->accountModel->getAccountById($id);
+            if ($user) {
+                echo json_encode($user);
+            } else {
+                http_response_code(404);
+                echo json_encode(['message' => 'User not found']);
+            }
+        } else {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized']);
+        }
+    }
+
+    // Cập nhật Người Dùng theo ID
+    public function update($id)
+    {
+        if ($this->authenticate()) {
+            header('Content-Type: application/json');
+            $data = json_decode(file_get_contents("php://input"), true);
+
+            $fullname = $data['fullname'] ?? '';
+            $password = $data['password'] ?? '';
+            $role = $data['role'] ?? 'user';
+
+            if (empty($fullname)) {
+                http_response_code(400);
+                echo json_encode(['message' => 'Fullname is required']);
+                return;
+            }
+
+            $hashedPassword = !empty($password) ? password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]) : null;
+
+            $result = $this->accountModel->updateAccount($id, $fullname, $hashedPassword, $role);
+
+            if ($result) {
+                echo json_encode(['message' => 'User updated successfully']);
+            } else {
+                http_response_code(400);
+                echo json_encode(['message' => 'User update failed']);
+            }
+        } else {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized']);
+        }
+    }
+
+    // Xóa Người Dùng theo ID
+    public function destroy($id)
+    {
+        if ($this->authenticate()) {
+            header('Content-Type: application/json');
+            $result = $this->accountModel->deleteAccount($id);
+            if ($result) {
+                echo json_encode(['message' => 'User deleted successfully']);
+            } else {
+                http_response_code(400);
+                echo json_encode(['message' => 'User deletion failed']);
+            }
+        } else {
+            http_response_code(401);
+            echo json_encode(['message' => 'Unauthorized']);
         }
     }
 }
