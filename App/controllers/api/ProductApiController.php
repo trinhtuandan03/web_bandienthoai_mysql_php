@@ -44,6 +44,7 @@ class ProductApiController
         $description = $data['description'] ?? '';
         $price = $data['price'] ?? '';
         $category_id = $data['category_id'] ?? null;
+        $account_id = $data['account_id'] ?? null;
         $result = $this->productModel->addProduct(
             $name,
             $description,
@@ -51,7 +52,8 @@ class ProductApiController
             $category_id,
             $data['image1'] ?? null,
             $data['image2'] ?? null,
-            $data['image3'] ?? null
+            $data['image3'] ?? null,
+            $account_id
         );
         if (is_array($result)) {
             http_response_code(400);
@@ -112,6 +114,7 @@ class ProductApiController
         $image1 = $data['image1'] ?? null;
         $image2 = $data['image2'] ?? null;
         $image3 = $data['image3'] ?? null;
+        $account_id = $data['account_id'] ?? null;
 
         // Gọi phương thức updateProduct() để cập nhật sản phẩm
         $result = $this->productModel->updateProduct(
@@ -122,7 +125,8 @@ class ProductApiController
             $category_id,
             $image1,
             $image2,
-            $image3
+            $image3,
+            $account_id
         );
 
         if ($result) {

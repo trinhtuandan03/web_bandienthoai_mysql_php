@@ -8,7 +8,7 @@ class ProductModel
         $this->conn = $db;
     }
     //thêm sản phẩm
-    public function addProduct($name, $description, $price, $category_id, $image1, $image2, $image3)
+    public function addProduct($name, $description, $price, $category_id, $image1, $image2, $image3, $account_id)
     {
         $errors = [];
         if (empty($name)) {
@@ -20,12 +20,15 @@ class ProductModel
         if (!is_numeric($price) || $price < 0) {
             $errors['price'] = 'Giá sản phẩm không hợp lệ';
         }
+        if (empty($account_id)) {
+            $errors['account_id'] = 'ID tài khoản không được để trống';
+        }
         if (count($errors) > 0) {
             return $errors;
         }
         $query = "INSERT INTO " . $this->table_name . " 
 (name, description, price, category_id, image1, image2, image3) 
-VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3)";
+VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3,:account_id)";
         $stmt = $this->conn->prepare($query);
         $name = htmlspecialchars(strip_tags($name));
         $description = htmlspecialchars(strip_tags($description));
@@ -34,6 +37,7 @@ VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3)";
         $image1 = htmlspecialchars(strip_tags($image1));
         $image2 = htmlspecialchars(strip_tags($image2));
         $image3 = htmlspecialchars(strip_tags($image3));
+        $account_id = htmlspecialchars(strip_tags($account_id));
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':description', $description);
         $stmt->bindParam(':price', $price);
@@ -41,6 +45,7 @@ VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3)";
         $stmt->bindParam(':image1', $image1);
         $stmt->bindParam(':image2', $image2);
         $stmt->bindParam(':image3', $image3);
+        $stmt->bindParam(':account_id', $account_id);
         if ($stmt->execute()) {
             return true;
         }
@@ -50,7 +55,7 @@ VALUES (:name, :description, :price, :category_id, :image1, :image2, :image3)";
     public function getProducts()
     {
         $query = "SELECT p.id, p.name, p.description, p.price, 
-p.image1, p.image2, p.image3, c.name as category_name
+p.image1, p.image2, p.image3, p.account_id, c.name as category_name
 FROM " . $this->table_name . " p
 LEFT JOIN category c ON p.category_id = c.id";
         $stmt = $this->conn->prepare($query);
@@ -70,7 +75,7 @@ LEFT JOIN category c ON p.category_id = c.id";
     }
 
     // Cập nhật sản phẩm
-    public function updateProduct($id, $name, $description, $price, $category_id, $image1, $image2, $image3)
+    public function updateProduct($id, $name, $description, $price, $category_id, $image1, $image2, $image3, $account_id)
     {
         $query = "UPDATE " . $this->table_name . " SET 
         name = :name, 
@@ -79,7 +84,8 @@ LEFT JOIN category c ON p.category_id = c.id";
         category_id = :category_id, 
         image1 = :image1, 
         image2 = :image2, 
-        image3 = :image3 
+        image3 = :image3,
+        account_id = :account_id
         WHERE id = :id";
 
         $stmt = $this->conn->prepare($query);
@@ -92,6 +98,7 @@ LEFT JOIN category c ON p.category_id = c.id";
         $image1 = htmlspecialchars(strip_tags($image1));
         $image2 = htmlspecialchars(strip_tags($image2));
         $image3 = htmlspecialchars(strip_tags($image3));
+        $account_id = htmlspecialchars(strip_tags($account_id));
 
         // Gán dữ liệu vào câu lệnh
         $stmt->bindParam(':id', $id);
@@ -102,6 +109,7 @@ LEFT JOIN category c ON p.category_id = c.id";
         $stmt->bindParam(':image1', $image1);
         $stmt->bindParam(':image2', $image2);
         $stmt->bindParam(':image3', $image3);
+        $stmt->bindParam(':account_id', $account_id);
 
         // Thực thi câu lệnh
         if ($stmt->execute()) {

@@ -122,7 +122,8 @@ class ProductController
         }
         return $target_file;
     }
-
+    //--------------------------------------------------------------------------------------------------
+    // Thêm sản phẩm vào giỏ hàng trên SESSION
     public function addToCart($id)
     {
         $product = $this->productModel->getProductById($id);
