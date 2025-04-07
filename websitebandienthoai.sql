@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2025 at 12:32 AM
+-- Generation Time: Apr 07, 2025 at 03:31 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.28
 SET
@@ -83,6 +83,71 @@ CREATE TABLE
     `account_id` int NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `blog`
+--
+INSERT INTO
+  `blog` (
+    `id`,
+    `title`,
+    `content`,
+    `thumbnail`,
+    `created_at`,
+    `account_id`
+  )
+VALUES
+  (
+    1,
+    'Tiêu đề bài viết Của Đan ',
+    'Nội dung bài viết',
+    'thumbnail.jpg',
+    '2025-04-06 00:56:01',
+    1
+  ),
+  (
+    3,
+    'Tiêu đề bài viết Của Đức ',
+    'Nội dung bài viết',
+    'thumbnail.jpg',
+    '2025-04-06 01:22:48',
+    1
+  ),
+  (
+    4,
+    'Tiêu đề bài viết Của Đức ',
+    'Nội dung bài viết',
+    'thumbnail.jpg',
+    '2025-04-06 01:31:59',
+    1
+  );
+
+-- --------------------------------------------------------
+--
+-- Table structure for table `cart`
+--
+CREATE TABLE
+  `cart` (
+    `id` int NOT NULL,
+    `user_id` int NOT NULL,
+    `product_id` int NOT NULL,
+    `quantity` int NOT NULL DEFAULT '1',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cart`
+--
+INSERT INTO
+  `cart` (
+    `id`,
+    `user_id`,
+    `product_id`,
+    `quantity`,
+    `created_at`
+  )
+VALUES
+  (2, 1, 4, 2, '2025-04-06 03:30:32');
+
 -- --------------------------------------------------------
 --
 -- Table structure for table `category`
@@ -101,37 +166,50 @@ INSERT INTO
   `category` (`id`, `name`, `description`)
 VALUES
   (1, 'Điện thoại', 'Danh mục các loại điện thoại'),
-  (2, 'SamSung', 'Danh mục các loại điện thoại');
+  (2, 'SamSung', 'Danh mục các loại điện thoại'),
+  (4, 'Tên sản phẩm dan', 'Mô tả sản phẩm ');
 
 -- --------------------------------------------------------
 --
 -- Table structure for table `orders`
 --
 CREATE TABLE
-  `cart` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `user_id` int NOT NULL, -- ID người dùng (liên kết với bảng `account`)
-    `product_id` int NOT NULL, -- ID sản phẩm
-    `quantity` int NOT NULL DEFAULT 1, -- Số lượng sản phẩm
-    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP, -- Thời gian thêm vào giỏ hàng
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  `orders` (
+    `id` int NOT NULL,
+    `user_id` int NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `phone` varchar(20) NOT NULL,
+    `address` text NOT NULL,
+    `total_price` decimal(10, 2) NOT NULL,
+    `status` varchar(50) DEFAULT 'pending',
+    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
-CREATE TABLE
+--
+-- Dumping data for table `orders`
+--
+INSERT INTO
   `orders` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `user_id` int NOT NULL, -- ID người dùng (liên kết với bảng `account`)
-    `name` varchar(255) NOT NULL, -- Tên người nhận
-    `phone` varchar(20) NOT NULL, -- Số điện thoại người nhận
-    `address` text NOT NULL, -- Địa chỉ người nhận
-    `total_price` decimal(10, 2) NOT NULL, -- Tổng giá trị đơn hàng
-    `status` varchar(50) DEFAULT 'pending', -- Trạng thái đơn hàng (pending, completed, canceled, etc.)
-    `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP, -- Thời gian tạo đơn hàng
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`user_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+    `id`,
+    `user_id`,
+    `name`,
+    `phone`,
+    `address`,
+    `total_price`,
+    `status`,
+    `created_at`
+  )
+VALUES
+  (
+    2,
+    1,
+    'tuandan',
+    '0336656538',
+    'Thủ Đức, TP.HCM',
+    '300000.00',
+    'pending',
+    '2025-04-06 03:38:32'
+  );
 
 -- --------------------------------------------------------
 --
@@ -139,15 +217,27 @@ CREATE TABLE
 --
 CREATE TABLE
   `order_details` (
-    `id` int NOT NULL AUTO_INCREMENT,
-    `order_id` int NOT NULL, -- ID đơn hàng (liên kết với bảng `orders`)
-    `product_id` int NOT NULL, -- ID sản phẩm
-    `quantity` int NOT NULL, -- Số lượng sản phẩm
-    `price` decimal(10, 2) NOT NULL, -- Giá sản phẩm tại thời điểm đặt hàng
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+    `id` int NOT NULL,
+    `order_id` int NOT NULL,
+    `product_id` int NOT NULL,
+    `quantity` int NOT NULL,
+    `price` decimal(10, 2) NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `order_details`
+--
+INSERT INTO
+  `order_details` (
+    `id`,
+    `order_id`,
+    `product_id`,
+    `quantity`,
+    `price`
+  )
+VALUES
+  (1, 2, 4, 2, '100000.00'),
+  (2, 2, 5, 1, '100000.00');
 
 -- --------------------------------------------------------
 --
@@ -280,6 +370,17 @@ VALUES
     'image3.jpg',
     1,
     NULL
+  ),
+  (
+    13,
+    'Tên sản phẩm dan',
+    'Mô tả sản phẩm ',
+    '10000.00',
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    1,
+    NULL
   );
 
 --
@@ -298,6 +399,13 @@ ALTER TABLE `blog` ADD PRIMARY KEY (`id`),
 ADD KEY `account_id` (`account_id`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart` ADD PRIMARY KEY (`id`),
+ADD KEY `user_id` (`user_id`),
+ADD KEY `product_id` (`product_id`);
+
+--
 -- Indexes for table `category`
 --
 ALTER TABLE `category` ADD PRIMARY KEY (`id`);
@@ -305,13 +413,15 @@ ALTER TABLE `category` ADD PRIMARY KEY (`id`);
 --
 -- Indexes for table `orders`
 --
-ALTER TABLE `orders` ADD PRIMARY KEY (`id`);
+ALTER TABLE `orders` ADD PRIMARY KEY (`id`),
+ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `order_details`
 --
 ALTER TABLE `order_details` ADD PRIMARY KEY (`id`),
-ADD KEY `order_id` (`order_id`);
+ADD KEY `order_id` (`order_id`),
+ADD KEY `product_id` (`product_id`);
 
 --
 -- Indexes for table `product`
@@ -332,29 +442,38 @@ AUTO_INCREMENT = 4;
 --
 -- AUTO_INCREMENT for table `blog`
 --
-ALTER TABLE `blog` MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `blog` MODIFY `id` int NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 5;
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart` MODIFY `id` int NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 3;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category` MODIFY `id` int NOT NULL AUTO_INCREMENT,
-AUTO_INCREMENT = 4;
+AUTO_INCREMENT = 5;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
-ALTER TABLE `orders` MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders` MODIFY `id` int NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 3;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
-ALTER TABLE `order_details` MODIFY `id` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order_details` MODIFY `id` int NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 3;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product` MODIFY `id` int NOT NULL AUTO_INCREMENT,
-AUTO_INCREMENT = 13;
+AUTO_INCREMENT = 14;
 
 --
 -- Constraints for dumped tables
@@ -365,9 +484,21 @@ AUTO_INCREMENT = 13;
 ALTER TABLE `blog` ADD CONSTRAINT `blog_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart` ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders` ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `order_details`
 --
-ALTER TABLE `order_details` ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `order_details` ADD CONSTRAINT `order_details_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `order_details_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `product`
