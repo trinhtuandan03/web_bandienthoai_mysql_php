@@ -1,167 +1,70 @@
 <!doctype html>
 <html lang="en">
 
-<!-- Mirrored from colorlib.com//polygon/concept/pages/chart-chartist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jun 2024 18:13:23 GMT -->
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="/static/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="/static/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/admin/libs/css/style.css">
-    <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
-    <title>Quản lý người dùng</title>
-    <meta name="robots" content="noindex, nofollow">
-    <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
-        try {
-            (function (w, d) {
-                ! function (j, k, l, m) {
-                    j[l] = j[l] || {};
-                    j[l].executed = [];
-                    j.zaraz = {
-                        deferred: [],
-                        listeners: []
-                    };
-                    j.zaraz._v = "5671";
-                    j.zaraz.q = [];
-                    j.zaraz._f = function (n) {
-                        return async function () {
-                            var o = Array.prototype.slice.call(arguments);
-                            j.zaraz.q.push({
-                                m: n,
-                                a: o
-                            })
-                        }
-                    };
-                    for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p);
-                    j.zaraz.init = () => {
-                        var q = k.getElementsByTagName(m)[0],
-                            r = k.createElement(m),
-                            s = k.getElementsByTagName("title")[0];
-                        s && (j[l].t = k.getElementsByTagName("title")[0].text);
-                        j[l].x = Math.random();
-                        j[l].w = j.screen.width;
-                        j[l].h = j.screen.height;
-                        j[l].j = j.innerHeight;
-                        j[l].e = j.innerWidth;
-                        j[l].l = j.location.href;
-                        j[l].r = k.referrer;
-                        j[l].k = j.screen.colorDepth;
-                        j[l].n = k.characterSet;
-                        j[l].o = (new Date).getTimezoneOffset();
-                        if (j.dataLayer)
-                            for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({
-                                ...x[1],
-                                ...y[1]
-                            })), {}))) zaraz.set(w[0], w[1], {
-                                scope: "page"
-                            });
-                        j[l].q = [];
-                        for (; j.zaraz.q.length;) {
-                            const z = j.zaraz.q.shift();
-                            j[l].q.push(z)
-                        }
-                        r.defer = !0;
-                        for (const A of [localStorage, sessionStorage]) Object.keys(A || {}).filter((C => C.startsWith("_zaraz_"))).forEach((B => {
-                            try {
-                                j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B))
-                            } catch {
-                                j[l]["z_" + B.slice(7)] = A.getItem(B)
-                            }
-                        }));
-                        r.referrerPolicy = "origin";
-                        r.src = "https://colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(j[l])));
-                        q.parentNode.insertBefore(r, q)
-                    };
-                    ["complete", "interactive"].includes(k.readyState) ? zaraz.init() : j.addEventListener("DOMContentLoaded", zaraz.init)
-                }(w, d, "zarazData", "script");
-            })(window, document)
-        } catch (e) {
-            throw fetch("/cdn-cgi/zaraz/t"), e;
-        };
-    </script>
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/circular-std/style.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/css/style.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <title>Chi tiết người dùng</title>
 </head>
 
 <body>
-
-
-
     <div class="dashboard-main-wrapper">
-
-
-
-        <%- include('../partical/headerManage') %>
+        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
         <div class="nav-left-sidebar sidebar-dark">
-            <%- include('../partical/menuManage') %>
+            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
         </div>
         <div class="dashboard-wrapper">
-            <div class="container-fluid  dashboard-content">
+            <div class="container-fluid dashboard-content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Chi Tiết Người Dùng</h2>
+                            <h2 class="pageheader-title">Chi tiết người dùng</h2>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <% if (user) { %>
-                        <h3>Thông tin người dùng</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item"><strong>ID:</strong>
-                                <%= user._id %>
-                            </li>
-                            <li class="list-group-item"><strong>Tên:</strong>
-                                <%= user.name %>
-                            </li>
-                            <li class="list-group-item"><strong>Tuổi:</strong>
-                                <%= user.age %>
-                            </li>
-                            <li class="list-group-item"><strong>Vai trò:</strong>
-                                <%= user.role %>
-                            </li>
-                        </ul>
-                        <a href="/UserManage" class="btn btn-secondary mt-3">← Trở lại danh sách</a>
-                        <% } else { %>
-                            <div class="alert alert-danger mt-3">
-                                <%= error || "Không tìm thấy người dùng" %>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Thông tin người dùng</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="userId">ID</label>
+                                        <input type="text" class="form-control" id="userId" value="<?php echo htmlspecialchars($user['id']); ?>" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" id="username" value="<?php echo htmlspecialchars($user['username']); ?>" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fullname">Họ và tên</label>
+                                        <input type="text" class="form-control" id="fullname" value="<?php echo htmlspecialchars($user['fullname']); ?>" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role">Vai trò</label>
+                                        <input type="text" class="form-control" id="role" value="<?php echo htmlspecialchars($user['role']); ?>" readonly>
+                                    </div>
+                                </form>
                             </div>
-                            <% } %>
+                        </div>
+                    </div>
                 </div>
-
             </div>
             <div class="footer">
-                <%- include('../partical/footerManage') %>
+                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
             </div>
         </div>
     </div>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/charts/chartist-bundle/Chartistjs.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/libs/js/main-js.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/vef91dfe02fce4ee0ad053f6de4f175db1715022073587"
-        integrity="sha512-sDIX0kl85v1Cl5tu4WGLZCpH/dV9OHbA4YlKCuCiMmOQIk4buzoYDZSFj+TvC71mOBLh8CDC/REgE0GX0xcbjA=="
-        data-cf-beacon='{"rayId":"88fa604b0e42715e","b":1,"version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/js/main-js.js"></script>
 </body>
-
-<!-- Mirrored from colorlib.com//polygon/concept/pages/chart-chartist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jun 2024 18:13:24 GMT -->
 
 </html>

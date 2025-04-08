@@ -45,7 +45,7 @@
                                     <div class="blog-content">
                                         <h3 class="blog-title"><?= htmlspecialchars($post['title']) ?></h3>
                                         <p class="blog-excerpt"><?= htmlspecialchars(substr($post['content'], 0, 100)) ?>...</p>
-                                        <a href="/web_bandienthoai_mysql_php/blog/show?id=<?= $post['id'] ?>"> class="btn-link">Xem thêm →</a>
+                                        <a href="/web_bandienthoai_mysql_php/blog/show?id=<?= $post['id'] ?>">Xem thêm →</a>
                                         </h3>
                                     </div>
                                 </div>

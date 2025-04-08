@@ -28,7 +28,7 @@ $url = explode('/', $url);
 
 // Xử lý routing cho phần Admin
 if (isset($url[0]) && strtolower($url[0]) === 'admin') {
-    $adminControllerName = 'AccountAdminController'; // Mặc định sử dụng AccountAdminController
+    $adminControllerName = isset($url[1]) ? ucfirst($url[1]) . 'Controller' : 'DefaultAdminController'; // Lấy controller từ URL hoặc mặc định
     $controllerPath = __DIR__ . '/app/controllers/admin/' . $adminControllerName . '.php';
 
     // Kiểm tra file controller
@@ -38,11 +38,11 @@ if (isset($url[0]) && strtolower($url[0]) === 'admin') {
         // Kiểm tra class controller
         if (class_exists($adminControllerName)) {
             $controller = new $adminControllerName();
-            $action = isset($url[1]) ? $url[1] : 'index'; // Lấy action từ URL
+            $action = isset($url[2]) ? $url[2] : 'index'; // Lấy action từ URL
 
             // Kiểm tra action trong controller
             if (method_exists($controller, $action)) {
-                call_user_func_array([$controller, $action], array_slice($url, 2));
+                call_user_func_array([$controller, $action], array_slice($url, 3));
                 exit;
             } else {
                 die('Action not found');

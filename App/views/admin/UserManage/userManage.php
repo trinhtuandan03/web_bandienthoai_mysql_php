@@ -8,17 +8,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="<?= BASE_URL ?>/public/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/admin/libs/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/admin/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/circular-std/style.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/css/style.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/charts/chartist-bundle/chartist.css">
     <title>Quản lý người dùng</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
         try {
-            (function (w, d) {
-                ! function (j, k, l, m) {
+            (function(w, d) {
+                ! function(j, k, l, m) {
                     j[l] = j[l] || {};
                     j[l].executed = [];
                     j.zaraz = {
@@ -27,8 +31,8 @@
                     };
                     j.zaraz._v = "5671";
                     j.zaraz.q = [];
-                    j.zaraz._f = function (n) {
-                        return async function () {
+                    j.zaraz._f = function(n) {
+                        return async function() {
                             var o = Array.prototype.slice.call(arguments);
                             j.zaraz.q.push({
                                 m: n,
@@ -54,9 +58,9 @@
                         j[l].o = (new Date).getTimezoneOffset();
                         if (j.dataLayer)
                             for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({
-                                ...x[1],
-                                ...y[1]
-                            })), {}))) zaraz.set(w[0], w[1], {
+                                    ...x[1],
+                                    ...y[1]
+                                })), {}))) zaraz.set(w[0], w[1], {
                                 scope: "page"
                             });
                         j[l].q = [];
@@ -107,30 +111,35 @@
                         </div>
                     <?php endif; ?>
 
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tuổi</th>
-                                <th>Vai trò</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
+                    <?php if (!empty($users)): ?>
+                        <table class="table table-bordered">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <td><?= htmlspecialchars($user['id']) ?></td>
-                                    <td><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['age']) ?></td>
-                                    <td><?= htmlspecialchars($user['role']) ?></td>
-                                    <td>
-                                        <a href="/UserDetails?id=<?= htmlspecialchars($user['id']) ?>"
-                                            class="btn btn-info btn-sm">Xem chi tiết</a>
-                                    </td>
+                                    <th>ID</th>
+                                    <th>Tên đăng nhập</th>
+                                    <th>Họ và tên</th>
+                                    <th>Vai trò</th>
+                                    <th>Hành động</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($users as $user): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($user['id']) ?></td>
+                                        <td><?= htmlspecialchars($user['username']) ?></td>
+                                        <td><?= htmlspecialchars($user['fullname']) ?></td>
+                                        <td><?= htmlspecialchars($user['role']) ?></td>
+                                        <td>
+                                            <a href="/web_bandienthoai_mysql_php/admin/AccountAdmin/showUser?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-info btn-sm">Xem chi tiết</a>
+                                            <a href="/web_bandienthoai_mysql_php/admin/account/delete?id=<?= htmlspecialchars($user['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa người dùng này?')">Xóa</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    <?php else: ?>
+                        <p>Không có người dùng nào.</p>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="footer">
