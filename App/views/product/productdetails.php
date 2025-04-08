@@ -43,36 +43,69 @@
                     <div class="product-name">
                         <h1><?= htmlspecialchars($product['name']) ?></h1>
                     </div>
-                    <div class="product-price">
-                        <p><strong>Giá:</strong> <?= number_format($product['price'], 0, ',', '.') ?>₫</p>
-                    </div>
-                    <div class="product-description">
-                        <p><strong>Mô tả:</strong> <?= nl2br(htmlspecialchars($product['description'])) ?></p>
-                    </div>
-                    <div class="product-images">
-                        <?php if (!empty($product['image1'])): ?>
-                            <div class="product-image">
-                                <img src="<?= $product['image1'] ?>" alt="Ảnh 1" width="300">
+                    <div class="product-content">
+                        <div class="product-images">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <?php if (!empty($product['image1'])): ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?= $product['image1'] ?>" alt="Ảnh 1">
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($product['image2'])): ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?= $product['image2'] ?>" alt="Ảnh 2">
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($product['image3'])): ?>
+                                        <div class="swiper-slide">
+                                            <img src="<?= $product['image3'] ?>" alt="Ảnh 3">
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <!-- Add navigation buttons -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
                             </div>
-                        <?php endif; ?>
-                        <?php if (!empty($product['image2'])): ?>
-                            <div class="product-image">
-                                <img src="<?= $product['image2'] ?>" alt="Ảnh 2" width="300">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-price">
+                                <p><strong>Giá:</strong> <?= number_format($product['price'], 0, ',', '.') ?>₫</p>
                             </div>
-                        <?php endif; ?>
-                        <?php if (!empty($product['image3'])): ?>
-                            <div class="product-image">
-                                <img src="<?= $product['image3'] ?>" alt="Ảnh 3" width="300">
+                            <div class="product-description">
+                                <p><strong>Mô tả:</strong> <?= nl2br(htmlspecialchars($product['description'])) ?></p>
                             </div>
-                        <?php endif; ?>
+                            <div class="product-actions">
+                                <div class="quantity-selector">
+                                    <button class="btn-decrease">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1">
+                                    <button class="btn-increase">+</button>
+                                </div>
+                                <div class="action-buttons">
+                                    <button class="btn-buy-now">Mua ngay</button>
+                                    <button class="btn-add-to-cart">Thêm vào giỏ hàng</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php else: ?>
                 <p>Sản phẩm không tồn tại hoặc có lỗi xảy ra.</p>
             <?php endif; ?>
 
-
-
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const swiper = new Swiper('.swiper-container', {
+                        loop: true, // Lặp lại các slide
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        slidesPerView: 1, // Hiển thị 1 ảnh tại một thời điểm
+                        spaceBetween: 10, // Khoảng cách giữa các slide
+                    });
+                });
+            </script>
 
         </main>
     </div>
