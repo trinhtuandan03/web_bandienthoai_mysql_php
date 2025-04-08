@@ -39,6 +39,12 @@
                                                 class="btn-register-now btn btn-primary w-100">Login</button>
                                         </div>
                                     </form>
+                                    <div class="text-center mt-3">
+                                        <p>Don't have an account?
+                                            <a href="/web_bandienthoai_mysql_php/account/register"
+                                                style="color: #007bff; text-decoration: none;">Register here</a>
+                                        </p>
+                                    </div>
                                     <?php if (isset($errors) && !empty($errors)): ?>
                                         <div class="alert alert-danger mt-3">
                                             <?php foreach ($errors as $error): ?>

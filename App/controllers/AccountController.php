@@ -8,6 +8,7 @@ class AccountController
             $fullName = $_POST['fullname'] ?? '';
             $password = $_POST['password'] ?? '';
             $confirmPassword = $_POST['confirmpassword'] ?? '';
+            $role = 'user'; // Vai trò mặc định là user
             $errors = [];
 
             // Kiểm tra dữ liệu đầu vào
@@ -35,6 +36,7 @@ class AccountController
                 'username' => $username,
                 'fullname' => $fullName,
                 'password' => $password,
+                'role' => $role, // Gửi vai trò mặc định là user
             ];
             $options = [
                 'http' => [
@@ -53,7 +55,7 @@ class AccountController
             }
 
             $result = json_decode($response, true);
-            if (isset($result['success']) && $result['success']) {
+            if (isset($result['message']) && $result['message'] === "Đăng ký thành công") {
                 header('Location: /web_bandienthoai_mysql_php/account/login');
                 exit;
             } else {
@@ -119,9 +121,17 @@ class AccountController
 
                     if (isset($result['token']) && isset($result['user'])) {
                         session_start();
+
+                        // Lưu token vào cookie nếu cần thiết
                         $_SESSION['token'] = $result['token'];
+                        // Lưu vai trò vào session
                         $_SESSION['role'] = $result['user']['role'];
-                        $_SESSION['user'] = $result['user'];
+                        // Lưu thông tin người dùng vào session
+                        $_SESSION['user'] = [
+                            'username' => $result['user']['name'], // Đảm bảo ánh xạ đúng key từ API
+                            'fullname' => $result['user']['fullname'],
+                            'role' => $result['user']['role']
+                        ];
 
                         // Điều hướng dựa trên vai trò
                         if ($_SESSION['role'] === 'admin') {
@@ -144,9 +154,24 @@ class AccountController
         }
     }
 
+    public function account_information()
+    {
+
+        // Kiểm tra xem người dùng đã đăng nhập chưa
+        if (!isset($_SESSION['user'])) {
+            header('Location: /web_bandienthoai_mysql_php/account/login');
+            exit;
+        }
+
+        // Lấy thông tin người dùng từ session
+        $user = $_SESSION['user'];
+
+        // Truyền thông tin người dùng đến view
+        include_once 'app/views/account/account_information.php';
+    }
+
     public function logout()
     {
-        session_start();
         session_destroy();
         header('Location: /web_bandienthoai_mysql_php/account/login');
         exit;
