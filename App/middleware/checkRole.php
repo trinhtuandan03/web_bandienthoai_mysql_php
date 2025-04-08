@@ -2,8 +2,6 @@
 
 function checkRole($requiredRole)
 {
-    session_start();
-
     // Kiểm tra xem người dùng đã đăng nhập chưa
     if (!isset($_SESSION['token']) || !isset($_SESSION['role'])) {
         header('Location: /web_bandienthoai_mysql_php/account/login');
