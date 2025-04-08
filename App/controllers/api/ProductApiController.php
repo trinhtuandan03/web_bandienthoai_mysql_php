@@ -78,6 +78,9 @@ class ProductApiController
         echo json_encode($products);
     }
 
+    
+
+
     // Lấy thông tin sản phẩm theo ID
     public function show($id)
     {
