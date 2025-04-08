@@ -17,10 +17,7 @@
                     <div id="submenu-1" class="collapse submenu" style>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="/UserManage">Danh sách người dùng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/UserDetails">Chi tiết người dùng</a>
+                                <a class="nav-link" href="http://localhost:8080/web_bandienthoai_mysql_php/admin/AccountAdmin/userManage">Danh sách người dùng</a>
                             </li>
                         </ul>
                     </div>

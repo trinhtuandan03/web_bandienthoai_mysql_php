@@ -15,37 +15,81 @@ class AccountAdminController
             // URL API để lấy danh sách tài khoản
             $apiUrl = 'http://localhost:8080/web_bandienthoai_mysql_php/api/account/index';
 
-            // Lấy Bearer Token từ session
-            if (!isset($_SESSION['token'])) {
-                throw new Exception('Không tìm thấy token xác thực');
+            // Tạo cURL request
+            $ch = curl_init($apiUrl);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Authorization: Bearer ' . $_SESSION['token'], // Thay $_SESSION['token'] bằng token của bạn
+                'Content-Type: application/json'
+            ]);
+            // Gửi yêu cầu và nhận phản hồi
+            $response = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($httpCode !== 200) {
+                throw new Exception('Không thể lấy dữ liệu từ API. HTTP Code: ' . $httpCode);
             }
-            $bearerToken = $_SESSION['token'];
-
-            // Thêm Bearer Token vào header
-            $options = [
-                'http' => [
-                    'header' => "Authorization: Bearer $bearerToken"
-                ]
-            ];
-            $context = stream_context_create($options);
-
-            // Gửi yêu cầu đến API
-            $json = file_get_contents($apiUrl, false, $context);
-            if ($json === false) {
-                throw new Exception('Không thể lấy dữ liệu từ API');
-            }
-
             // Giải mã JSON
-            $accounts = json_decode($json, true);
+            $users = json_decode($response, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
                 throw new Exception('Phản hồi JSON không hợp lệ');
             }
+            curl_close($ch);
         } catch (Exception $e) {
-            $accounts = [];
+            $users = [];
             $error = $e->getMessage();
         }
 
         // Bao gồm file view
         include __DIR__ . '/../../views/admin/UserManage/userManage.php';
+    }
+
+    public function showUser()
+    {
+        if (!isset($_GET['id'])) {
+            die("Thiếu ID người dùng");
+        }
+
+        $id = $_GET['id'];
+        $apiUrl = "http://localhost:8080/web_bandienthoai_mysql_php/api/account/show/" . $id;
+
+        try {
+            // Khởi tạo cURL
+            $ch = curl_init($apiUrl);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Authorization: Bearer ' . $_SESSION['token'], // Thay $_SESSION['token'] bằng token của bạn
+                'Content-Type: application/json'
+            ]);
+
+            // Gửi yêu cầu và nhận phản hồi
+            $response = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+            // Kiểm tra lỗi HTTP
+            if ($httpCode !== 200) {
+                throw new Exception('Không thể lấy dữ liệu từ API. HTTP Code: ' . $httpCode);
+            }
+
+            // Giải mã JSON
+            $user = json_decode($response, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new Exception('Phản hồi JSON không hợp lệ');
+            }
+
+            // Kiểm tra dữ liệu người dùng
+            if (empty($user) || !isset($user['id'])) {
+                throw new Exception("Không tìm thấy người dùng hoặc dữ liệu không hợp lệ.");
+            }
+
+            curl_close($ch);
+
+            // Bao gồm file view
+            include __DIR__ . '/../../views/admin/UserManage/userDetails.php';
+        } catch (Exception $e) {
+            if (isset($ch)) {
+                curl_close($ch);
+            }
+            die("Lỗi: " . $e->getMessage());
+        }
     }
 }
