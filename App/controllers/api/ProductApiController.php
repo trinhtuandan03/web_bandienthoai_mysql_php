@@ -73,15 +73,11 @@ class ProductApiController
     // Lấy danh sách sản phẩm
     public function index()
     {
-        if ($this->authenticate()) {
-            header('Content-Type: application/json');
-            $products = $this->productModel->getProducts();
-            echo json_encode($products);
-        } else {
-            http_response_code(response_code: 401);
-            echo json_encode(['message' => 'Unauthorized']);
-        }
+        header('Content-Type: application/json');
+        $products = $this->productModel->getProducts();
+        echo json_encode($products);
     }
+
     // Lấy thông tin sản phẩm theo ID
     public function show($id)
     {
@@ -155,4 +151,3 @@ class ProductApiController
         }
     }
 }
-?>
