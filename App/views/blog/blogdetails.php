@@ -38,7 +38,8 @@
                     <div class="blog-details">
                         <h1 class="blog-title"><?= htmlspecialchars($blog['title']) ?></h1>
                         <div class="blog-thumbnail">
-                            <img src="<?= htmlspecialchars($blog['thumbnail']) ?>" alt="<?= htmlspecialchars($blog['title']) ?>" class="img-fluid">
+                            <img src="<?= htmlspecialchars($blog['thumbnail']) ?>"
+                                alt="<?= htmlspecialchars($blog['title']) ?>" class="img-fluid">
                         </div>
                         <div class="blog-meta">
                             <p><strong>Tác giả:</strong> <?= htmlspecialchars($blog['author']) ?></p>

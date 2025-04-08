@@ -23,9 +23,9 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/fancybox.min.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/nice-select.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/blog.css">
+    <!-- <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/blog.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/blogdetails.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/productdetails.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/productdetails.css"> -->
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/homestyle.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.min.css">
 </head>

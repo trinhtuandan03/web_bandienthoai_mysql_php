@@ -8,11 +8,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/static/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="/static/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/admin/libs/css/style.css">
-    <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
+ <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/circular-std/style.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/css/style.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet"
+        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/charts/chartist-bundle/chartist.css">
     <title>Chi tiết bài viết</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
@@ -86,16 +90,10 @@
 </head>
 
 <body>
-
-
-
     <div class="dashboard-main-wrapper">
-
-
-
-        <%- include('../partical/headerManage') %>
+        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
         <div class="nav-left-sidebar sidebar-dark">
-            <%- include('../partical/menuManage') %>
+            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
         </div>
         <div class="dashboard-wrapper">
             <div class="container-fluid  dashboard-content">

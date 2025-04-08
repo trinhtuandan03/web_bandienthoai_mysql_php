@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/css/style.css">
     <link rel="stylesheet"
         href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+
     <title>Chi tiết người dùng</title>
 </head>
 

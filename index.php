@@ -16,12 +16,16 @@ require_once 'app/controllers/api/OrderApiController.php';
 
 // Import Admin Controllers
 require_once 'app/controllers/admin/AccountAdminController.php';
+require_once 'app/controllers/admin/HomeAdminController.php';
+require_once 'app/controllers/admin/ProductAdminController.php';
+require_once 'app/controllers/admin/BlogAdminController.php';
 
 // Lấy URL từ request
 $url = $_GET['url'] ?? '';
 $url = rtrim($url, '/');
 $url = filter_var($url, FILTER_SANITIZE_URL);
 $url = explode('/', $url);
+
 
 
 
