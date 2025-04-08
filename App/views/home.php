@@ -65,13 +65,24 @@
                 <div class="container ">
                     <h2 class="text-center mb-4 mt-n2 ">Hot Products</h2>
                     <div class="product-grid">
-                        <?php foreach ($products as $product): ?>
-                            <div class="product-item">
-                                <img src="<?php echo $product['image1']; ?>" alt="<?php echo $product['name']; ?>">
-                                <h3><?php echo $product['name']; ?></h3>
-                                <p><?php echo number_format($product['price'], 0, ',', '.'); ?>₫</p>
-                            </div>
-                        <?php endforeach; ?>
+                        <?php if (!empty($products)): ?>
+                            <?php foreach ($products as $product): ?>
+                                <div class="product-item">
+                                    <img src="<?= $product['image1'] ?>" alt="<?= $product['name'] ?>">
+
+                                    <!-- Bọc tên sản phẩm bằng thẻ <a> để link đến trang chi tiết -->
+                                    <h3>
+                                        <a href="http://localhost:8080/web_bandienthoai_mysql_php/product/show?id=<?= $product['id'] ?>">
+                                            <?= $product['name'] ?>
+                                        </a>
+                                    </h3>
+
+                                    <p><?= number_format($product['price'], 0, ',', '.') ?>₫</p>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p>Không có sản phẩm nào trong danh mục này.</p>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

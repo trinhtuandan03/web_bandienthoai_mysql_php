@@ -7,23 +7,39 @@ class ProductController
     public function index()
     {
         try {
-            // URL API đang gọi đến endpoint /api/product/index
-            $apiUrl = 'http://localhost:8080/web_bandienthoai_mysql_php/api/product/index';
-            // Lấy dữ liệu từ API
-            $json = file_get_contents($apiUrl);
-            if ($json === false) {
-                throw new Exception('Cannot fetch data from API');
+            $categoryName = $_GET['category_name'] ?? null;
+
+            // Gọi danh sách loại sản phẩm để hiển thị dropdown
+            $categories = json_decode(file_get_contents("http://localhost:8080/web_bandienthoai_mysql_php/api/category/index"), true);
+
+            // Gọi tất cả sản phẩm
+            $products = json_decode(file_get_contents("http://localhost:8080/web_bandienthoai_mysql_php/api/product/index"), true);
+
+            // Nếu có category_name, lọc lại theo tên
+            if ($categoryName) {
+                $products = array_filter($products, function ($product) use ($categoryName) {
+                    return isset($product['category_name']) && $product['category_name'] === $categoryName;
+                });
             }
-            $products = json_decode($json, true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Invalid JSON response');
-            }
+            include __DIR__ . '/../views/product/product_index.php';
         } catch (Exception $e) {
-            $products = [];
-            // Log error hoặc xử lý lỗi
+            echo "Lỗi: " . $e->getMessage();
         }
-        // Hiển thị view với dữ liệu products
-        include __DIR__ . '/../views/product/product_index.php';
+    }
+
+    public function show()
+    {
+        if (!isset($_GET['id'])) {
+            die("Thiếu ID sản phẩm");
+        }
+
+        $id = $_GET['id'];
+        $url = "http://localhost:8080/web_bandienthoai_mysql_php/api/product/show/" . $id;
+        $json = file_get_contents($url);
+        $response = json_decode($json, true);
+        
+        
+
+        include __DIR__ . '/../views/product/productdetails.php';
     }
 }
-
