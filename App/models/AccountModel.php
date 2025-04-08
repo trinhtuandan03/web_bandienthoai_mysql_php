@@ -9,7 +9,7 @@ class AccountModel
     {
         $this->conn = $db;
     }
-
+    // sử dụng cho AccountApiController.php để tạo api và trả về json và kết nối trức tiếp với database
     public function getAccountByUsername($username)
     {
         $query = "SELECT * FROM account WHERE username = :username";

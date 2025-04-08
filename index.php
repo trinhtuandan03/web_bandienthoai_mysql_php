@@ -55,7 +55,7 @@ if (file_exists('app/controllers/' . $controllerName . '.php')) {
 }
 
 // Kiểm tra và gọi action
-if (method_exists($controller, $action)) {
+if (method_exists($controller, method: $action)) {
     call_user_func_array([$controller, $action], array_slice($url, 2));
 } else {
     die('Action not found');

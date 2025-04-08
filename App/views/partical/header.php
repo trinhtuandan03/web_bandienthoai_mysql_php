@@ -1,4 +1,4 @@
-<?php define('BASE_URL', '/web_bandienthoai_laragon_mysql_php'); ?>
+<?php define('BASE_URL', '/web_bandienthoai_mysql_php'); ?>
 
 
 <head>
@@ -15,13 +15,13 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="public/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="public/css/plugins/swiper-bundle.min.css">
-    <link rel="stylesheet" href="public/css/plugins/font-awesome.min.css">
-    <link rel="stylesheet" href="public/css/plugins/simple-line-icons.css">
-    <link rel="stylesheet" href="public/css/plugins/fancybox.min.css">
-    <link rel="stylesheet" href="public/css/plugins/nice-select.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/homestyle.css">
-    <link rel="stylesheet" href="public/css/style.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/simple-line-icons.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/fancybox.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/homestyle.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/style.min.css">
 </head>
