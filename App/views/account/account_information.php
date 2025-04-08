@@ -51,7 +51,6 @@
         <!--== End Header Wrapper ==-->
 
         <main class="main-content">
-
             <!--== Start Page Header Area Wrapper ==-->
             <div class="page-header-area">
                 <div class="container">
@@ -138,8 +137,11 @@
                 </div>
             </div>
             <!--== End My Account Wrapper ==-->
+
+
         </main>
     </div>
+
 </body>
 
 <?php include_once(__DIR__ . '/../partical/footer.php'); ?>
