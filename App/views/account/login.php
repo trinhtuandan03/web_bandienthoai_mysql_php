@@ -18,20 +18,20 @@
                                     <p>Welcome back! Please enter your username and password to login.</p>
                                 </div>
                                 <div class="login-register-style login-register-pr w-100">
-                                    <form action="/web_bandienthoai_mysql_php/account/checkLogin" method="POST">
+                                    <form action="/web_bandienthoai_mysql_php/account/login" method="POST">
                                         <div class="login-register-input mb-3">
                                             <input type="text" id="username" name="username"
-                                                placeholder="Username or email address" class="form-control " required>
+                                                placeholder="Username or email address" class="form-control" required>
                                         </div>
                                         <div class="login-register-input mb-3">
                                             <input type="password" id="password" name="password" placeholder="Password"
-                                                class="form-control " required>
+                                                class="form-control" required>
                                             <div class="forgot text-end mt-2">
-                                                <a href="login-register.html">Forgot?</a>
+                                                <a href="/web_bandienthoai_mysql_php/account/forgotPassword">Forgot?</a>
                                             </div>
                                         </div>
                                         <div class="remember-me-btn d-flex justify-content-center mb-3">
-                                            <input id="remember-me-checkbox" type="checkbox">
+                                            <input id="remember-me-checkbox" type="checkbox" name="remember_me">
                                             <label for="remember-me-checkbox" class="ms-2">Remember me</label>
                                         </div>
                                         <div class="btn-register">
@@ -39,6 +39,13 @@
                                                 class="btn-register-now btn btn-primary w-100">Login</button>
                                         </div>
                                     </form>
+                                    <?php if (isset($errors) && !empty($errors)): ?>
+                                        <div class="alert alert-danger mt-3">
+                                            <?php foreach ($errors as $error): ?>
+                                                <p><?php echo htmlspecialchars($error); ?></p>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -49,6 +56,5 @@
         </main>
     </div>
 </body>
-
 
 </html>

@@ -8,12 +8,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/public/admin/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="/public/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/public/admin/libs/css/style.css">
-    <link rel="stylesheet" href="/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="/public/admin/vendor/charts/chartist-bundle/chartist.css">
-    <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
+    <link rel="stylesheet" href="/static/admin/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/static/admin/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/admin/libs/css/style.css">
+    <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
+    <title>Thêm sản phẩm</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
         try {
@@ -93,68 +93,7 @@
 
 
 
-        <div class="dashboard-header">
-            <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="https://colorlib.com//polygon/concept/index.html">Concept</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto navbar-right-top">
-                        <li class="nav-item">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" type="text" placeholder="Search..">
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown notification">
-                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span
-                                    class="indicator"></span></a>
-                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                                <li>
-                                    <div class="notification-title"> Notification</div>
-                                    <div class="notification-list">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown connection">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
-                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
-                                <li class="connection-list">
-                                </li>
-                                <li>
-                                    <div class="conntection-footer"><a href="#">More</a></div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="https://colorlib.com//polygon/concept/assets/images/avatar-1.jpg" alt
-                                    class="user-avatar-md rounded-circle"></a>
-                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
-                                aria-labelledby="navbarDropdownMenuLink2">
-                                <div class="nav-user-info">
-                                    <h5 class="mb-0 text-white nav-user-name">
-                                        Trịnh Tuấn Đan</h5>
-                                    <span class="status"></span><span class="ml-2">Bio</span>
-                                </div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Tài Khoản </a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Cài Đặt </a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Đăng Xuất </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <%- include('../partical/headerManage') %>
         <div class="nav-left-sidebar sidebar-dark">
             <%- include('../partical/menuManage') %>
         </div>
@@ -164,72 +103,55 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <h2 class="pageheader-title">Thêm Sản Phẩm </h2>
-                            <div class="page-breadcrumb">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a>
-                                        </li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Sản Phẩm</a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">Thêm Sản Phẩm</li>
-                                    </ol>
-                                </nav>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- Create form mẫu -->
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="card">
-                            <h2 class="card-header">Thêm Sản Phẩm</h2>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a asp-action="Index" class="breadcrumb-link">Quản Lý Sản
-                                        Phẩm</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Thêm Sản Phẩm</li>
-                            </ol>
-                            <div class="card-body">
-                                <form asp-action="Create" id="validationform" data-parsley-validate="" novalidate="">
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                                    <!-- Tiêu Đề Sản Phẩm -->
-                                    <div class="form-group row">
-                                        <label asp-for="TieuDeSanpham"
-                                            class="col-12 col-sm-3 col-form-label text-sm-right">Tiêu Đề Sản
-                                            Phẩm</label>
-                                        <div class="col-12 col-sm-8 col-lg-6">
-                                            <input asp-for="TieuDeSanpham" class="form-control"
-                                                placeholder="Nhập tiêu đề sản phẩm" />
-                                            <span asp-validation-for="TieuDeSanpham" class="text-danger"></span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Mô Tả Sản Phẩm -->
-                                    <div class="form-group row">
-                                        <label asp-for="MoTaSanpham"
-                                            class="col-12 col-sm-3 col-form-label text-sm-right">Mô Tả Sản
-                                            Phẩm</label>
-                                        <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea asp-for="MoTaSanpham" class="form-control"
-                                                placeholder="Nhập mô tả sản phẩm"></textarea>
-                                            <span asp-validation-for="MoTaSanpham" class="text-danger"></span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Nút Thao Tác -->
-                                    <div class="form-group row text-right">
-                                        <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-3">
-                                            <button type="submit" class="btn btn-space btn-primary">Thêm Sản
-                                                Phẩm</button>
-                                            <a asp-action="Index" class="btn btn-space btn-secondary">Quay lại danh
-                                                sách</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                <div class="container mt-4">
+                    <% if (error) { %>
+                        <div class="alert alert-danger">
+                            <%= error %>
                         </div>
-                    </div>
+                        <% } %>
+
+                            <form action="/SanPhamManage/Create" method="POST">
+                                <div class="form-group">
+                                    <label>Tên sản phẩm</label>
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Giá</label>
+                                    <input type="number" name="price" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mô tả</label>
+                                    <textarea name="description" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Loại sản phẩm</label>
+                                    <select name="category" class="form-control" required>
+                                        <option value="">-- Chọn loại sản phẩm --</option>
+                                        <% categories.forEach(cat=> { %>
+                                            <option value="<%= cat.id %>">
+                                                <%= cat.name %>
+                                            </option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+
+                                <% for (let i=0; i < 5; i++) { %>
+                                    <div class="form-group">
+                                        <label>URL ảnh <%= i===0 ? "" : i %></label>
+                                        <input type="text" name="URLImage<%= i === 0 ? "" : i %>" class="form-control">
+                                    </div>
+                                    <% } %>
+
+                                        <button type="submit" class="btn btn-success">Thêm mới</button>
+                                        <a href="/SanPhamManage/Index" class="btn btn-secondary">Huỷ</a>
+                            </form>
                 </div>
+
             </div>
             <div class="footer">
                 <%- include('../partical/footerManage') %>
@@ -255,7 +177,7 @@
         gtag('config', 'UA-23581568-13');
     </script>
     <script defer
-        src="https://public.cloudflareinsights.com/beacon.min.js/vef91dfe02fce4ee0ad053f6de4f175db1715022073587"
+        src="https://static.cloudflareinsights.com/beacon.min.js/vef91dfe02fce4ee0ad053f6de4f175db1715022073587"
         integrity="sha512-sDIX0kl85v1Cl5tu4WGLZCpH/dV9OHbA4YlKCuCiMmOQIk4buzoYDZSFj+TvC71mOBLh8CDC/REgE0GX0xcbjA=="
         data-cf-beacon='{"rayId":"88fa604b0e42715e","b":1,"version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
         crossorigin="anonymous"></script>

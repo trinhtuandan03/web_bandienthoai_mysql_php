@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/static/admin/libs/css/style.css">
     <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
-    <title>Quản lý người dùng</title>
+    <title>Quản Lý Bài Viết</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
         try {
@@ -86,57 +86,91 @@
 </head>
 
 <body>
+
+
+
     <div class="dashboard-main-wrapper">
-        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
-        <div class="nav-left-sidebar sidebar-dark">
-            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
-        </div>
-        <div class="dashboard-wrapper">
-            <div class="container-fluid dashboard-content">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div class="page-header">
-                            <h2 class="pageheader-title">Danh Sách Người Dùng</h2>
+
+
+
+        <%- include('../partical/headerManage') %>
+            <div class="nav-left-sidebar sidebar-dark">
+                <%- include('../partical/menuManage') %>
+            </div>
+            <div class="dashboard-wrapper">
+                <div class="container-fluid  dashboard-content">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Danh Sách Bài Viết </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <p>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <a href="/BlogManage/Create" class="btn btn-primary">Thêm Bài Viết</a>
+                                </div>
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <% if (error) { %>
+                                    <div class="alert alert-danger">
+                                        <%= error %>
+                                    </div>
+                                    <% } %>
+
+                                        <% if (blogs && blogs.length> 0) { %>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Ảnh</th>
+                                                        <th>Tiêu đề</th>
+                                                        <th>Tác giả</th>
+                                                        <th>Ngày tạo</th>
+                                                        <th>Hành động</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% blogs.forEach(blog=> { %>
+                                                        <tr>
+                                                            <td><img src="<%= blog.thumbnail %>" style="height: 60px;">
+                                                            </td>
+                                                            <td>
+                                                                <%= blog.title %>
+                                                            </td>
+                                                            <td>
+                                                                <%= blog.author %>
+                                                            </td>
+                                                            <td>
+                                                                <%= blog.createdAt.toLocaleDateString('vi-VN') %>
+                                                            </td>
+                                                            <td>
+                                                                <a href="/BlogManage/Details?id=<%= blog.id %>"
+                                                                    class="btn btn-info btn-sm">Xem</a>
+                                                                <a href="/BlogManage/Edit?id=<%= blog.id %>"
+                                                                    class="btn btn-warning btn-sm">Sửa</a>
+                                                                <a href="/BlogManage/Delete?id=<%= blog.id %>"
+                                                                    class="btn btn-danger btn-sm">Xoá</a>
+                                                            </td>
+                                                        </tr>
+                                                        <% }) %>
+                                                </tbody>
+                                            </table>
+                                            <% } else { %>
+                                                <p>Không có bài viết nào.</p>
+                                                <% } %>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <?php if (isset($error) && $error): ?>
-                        <div class="alert alert-danger">
-                            <?= htmlspecialchars($error) ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tuổi</th>
-                                <th>Vai trò</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($user['id']) ?></td>
-                                    <td><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['age']) ?></td>
-                                    <td><?= htmlspecialchars($user['role']) ?></td>
-                                    <td>
-                                        <a href="/UserDetails?id=<?= htmlspecialchars($user['id']) ?>"
-                                            class="btn btn-info btn-sm">Xem chi tiết</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                <div class="footer">
+                    <%- include('../partical/footerManage') %>
                 </div>
             </div>
-            <div class="footer">
-                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
-            </div>
-        </div>
     </div>
     <script src="https://colorlib.com//polygon/concept/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://colorlib.com//polygon/concept/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
