@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/static/admin/libs/css/style.css">
     <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
-    <title>Quản lý người dùng</title>
+    <title>Thêm bài viết</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
         try {
@@ -86,55 +86,57 @@
 </head>
 
 <body>
+
+
+
     <div class="dashboard-main-wrapper">
-        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
+
+
+
+        <<%- include('../partical/headerManage') %>
         <div class="nav-left-sidebar sidebar-dark">
-            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
+            <%- include('../partical/menuManage') %>
         </div>
         <div class="dashboard-wrapper">
-            <div class="container-fluid dashboard-content">
+            <div class="container-fluid  dashboard-content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Danh Sách Người Dùng</h2>
+                            <h2 class="pageheader-title">Thêm bài viết </h2>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <?php if (isset($error) && $error): ?>
+                <div class="card p-4">
+                    <% if (typeof error !=="undefined" && error) { %>
                         <div class="alert alert-danger">
-                            <?= htmlspecialchars($error) ?>
+                            <%= error %>
                         </div>
-                    <?php endif; ?>
+                        <% } %>
 
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tuổi</th>
-                                <th>Vai trò</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($user['id']) ?></td>
-                                    <td><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['age']) ?></td>
-                                    <td><?= htmlspecialchars($user['role']) ?></td>
-                                    <td>
-                                        <a href="/UserDetails?id=<?= htmlspecialchars($user['id']) ?>"
-                                            class="btn btn-info btn-sm">Xem chi tiết</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            <form method="POST" action="/BlogManage/Create">
+                                <div class="form-group">
+                                    <label>Tiêu đề</label>
+                                    <input type="text" class="form-control" name="title" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ảnh thumbnail (URL)</label>
+                                    <input type="text" class="form-control" name="thumbnail"
+                                        placeholder="https://example.com/image.jpg">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nội dung bài viết</label>
+                                    <textarea class="form-control" name="content" rows="6" required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Thêm bài viết</button>
+                            </form>
                 </div>
+
             </div>
             <div class="footer">
-                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
+                <%- include('../partical/footerManage') %>
             </div>
         </div>
     </div>

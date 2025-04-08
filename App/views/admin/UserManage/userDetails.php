@@ -86,55 +86,54 @@
 </head>
 
 <body>
+
+
+
     <div class="dashboard-main-wrapper">
-        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
+
+
+
+        <%- include('../partical/headerManage') %>
         <div class="nav-left-sidebar sidebar-dark">
-            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
+            <%- include('../partical/menuManage') %>
         </div>
         <div class="dashboard-wrapper">
-            <div class="container-fluid dashboard-content">
+            <div class="container-fluid  dashboard-content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Danh Sách Người Dùng</h2>
+                            <h2 class="pageheader-title">Chi Tiết Người Dùng</h2>
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                    <?php if (isset($error) && $error): ?>
-                        <div class="alert alert-danger">
-                            <?= htmlspecialchars($error) ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tuổi</th>
-                                <th>Vai trò</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($user['id']) ?></td>
-                                    <td><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['age']) ?></td>
-                                    <td><?= htmlspecialchars($user['role']) ?></td>
-                                    <td>
-                                        <a href="/UserDetails?id=<?= htmlspecialchars($user['id']) ?>"
-                                            class="btn btn-info btn-sm">Xem chi tiết</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                    <% if (user) { %>
+                        <h3>Thông tin người dùng</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>ID:</strong>
+                                <%= user._id %>
+                            </li>
+                            <li class="list-group-item"><strong>Tên:</strong>
+                                <%= user.name %>
+                            </li>
+                            <li class="list-group-item"><strong>Tuổi:</strong>
+                                <%= user.age %>
+                            </li>
+                            <li class="list-group-item"><strong>Vai trò:</strong>
+                                <%= user.role %>
+                            </li>
+                        </ul>
+                        <a href="/UserManage" class="btn btn-secondary mt-3">← Trở lại danh sách</a>
+                        <% } else { %>
+                            <div class="alert alert-danger mt-3">
+                                <%= error || "Không tìm thấy người dùng" %>
+                            </div>
+                            <% } %>
                 </div>
+
             </div>
             <div class="footer">
-                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
+                <%- include('../partical/footerManage') %>
             </div>
         </div>
     </div>

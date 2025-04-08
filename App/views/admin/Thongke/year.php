@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/static/admin/libs/css/style.css">
     <link rel="stylesheet" href="/static/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="/static/admin/vendor/charts/chartist-bundle/chartist.css">
-    <title>Quản lý người dùng</title>
+    <title>Quản Lý Doanh Thu Năm</title>
     <meta name="robots" content="noindex, nofollow">
     <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
         try {
@@ -86,55 +86,94 @@
 </head>
 
 <body>
+
+
+
     <div class="dashboard-main-wrapper">
-        <?php include __DIR__ . '/../partical/headerManage.php'; ?>
+
+
+
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="https://colorlib.com//polygon/concept/index.html">5 con báo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span
+                                    class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="https://colorlib.com//polygon/concept/assets/images/avatar-1.jpg" alt
+                                    class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown"
+                                aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">5 Con Báo</h5>
+                                    <span class="status"></span><span class="ml-2">Bio</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Tài Khoản </a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Cài Đặt </a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Đăng Xuất </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <div class="nav-left-sidebar sidebar-dark">
-            <?php include __DIR__ . '/../partical/menuManage.php'; ?>
+            <%- include('../partical/menuManage') %>
         </div>
         <div class="dashboard-wrapper">
-            <div class="container-fluid dashboard-content">
+            <div class="container-fluid  dashboard-content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Danh Sách Người Dùng</h2>
+                            <h2 class="pageheader-title">Thống kê doanh thu năm</h2>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <?php if (isset($error) && $error): ?>
-                        <div class="alert alert-danger">
-                            <?= htmlspecialchars($error) ?>
-                        </div>
-                    <?php endif; ?>
 
-                    <table class="table table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Tuổi</th>
-                                <th>Vai trò</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($users as $user): ?>
-                                <tr>
-                                    <td><?= htmlspecialchars($user['id']) ?></td>
-                                    <td><?= htmlspecialchars($user['name']) ?></td>
-                                    <td><?= htmlspecialchars($user['age']) ?></td>
-                                    <td><?= htmlspecialchars($user['role']) ?></td>
-                                    <td>
-                                        <a href="/UserDetails?id=<?= htmlspecialchars($user['id']) ?>"
-                                            class="btn btn-info btn-sm">Xem chi tiết</a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
+
+
+
+
             </div>
             <div class="footer">
-                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
+                <%- include('../partical/footerManage') %>
             </div>
         </div>
     </div>

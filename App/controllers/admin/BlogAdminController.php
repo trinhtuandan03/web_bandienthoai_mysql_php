@@ -14,18 +14,12 @@ class Blogcontroller
             if ($json === false) {
                 throw new Exception('Cannot fetch data from API');
             }
-
-
             $blog = json_decode($json, true);
-
             if (json_last_error() !== JSON_ERROR_NONE) {
                 throw new Exception('Invalid JSON response');
             }
         } catch (Exception $e) {
-
-
             $blog = [];
-
             // Log error hoặc xử lý lỗi
         }
         // Hiển thị view với dữ liệu products
