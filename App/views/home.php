@@ -53,65 +53,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hero-three-slide-shape-img "><img
-                                        src="<?= BASE_URL ?>/public/images/slider/slider3-shape1.png " width="201 "
-                                        height="172 " alt="Image "></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!--== End Hero Area Wrapper ==-->
-            <!--== Start Features Area Wrapper ==-->
-            <div class="features-area pt-5 pt-md-0 pb-5 pb-md-0 ">
-                <div class="container pt-8 pb-8 ">
-                    <div class="row mb-n8 mt-n2 ">
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6 ">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item ">
-                                <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/1.png " width="44 " height="38 "
-                                        alt="Icon ">
-                                </div>
-                                <div class="feature-content ">
-                                    <h4 class="feature-title ">Support 24/7</h4>
-                                    <p>Delicated 24/7 Support</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6 ">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item ">
-                                <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/2.png " width="38 " height="38 "
-                                        alt="Icon ">
-                                </div>
-                                <div class="feature-content ">
-                                    <h4 class="feature-title ">Easy Returns</h4>
-                                    <p>Shop With Confidence</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>x
-                        <div class="col-sm-6 col-md-6 col-lg-3 mb-6 ">
-                            <!--== Start Feature Item ==-->
-                            <div class="feature-item ">
-                                <div class="feature-icon ">
-                                    <img src="<?= BASE_URL ?>/public/images/icons/3.png " width="48 " height="38 "
-                                        alt="Icon ">
-                                </div>
-                                <div class="feature-content ">
-                                    <h4 class="feature-title ">Card Payment</h4>
-                                    <p>12 Months Installments</p>
-                                </div>
-                            </div>
-                            <!--== End Feature Item ==-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--== End Features Area Wrapper ==-->
 
             <!--== Start Product Filter Area Wrapper ==-->
             <div class="product-area section-two-space ">
