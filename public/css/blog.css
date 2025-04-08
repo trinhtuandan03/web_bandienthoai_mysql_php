@@ -1,0 +1,91 @@
+/* Căn chỉnh bài viết giống trang báo */
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-thumbnail img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.blog-excerpt {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Định dạng liên kết "Xem thêm →" */
+.btn-link {
+    color: #3498db; /* Màu xanh */
+    font-size: 14px; /* Kích thước chữ */
+    font-weight: bold;
+    text-decoration: none; /* Bỏ gạch chân */
+    transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #2980b9; /* Màu xanh đậm hơn khi hover */
+}
+
+/* Định dạng lưới bài viết */
+.container .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 20px); /* 3 bài viết mỗi hàng */
+    max-width: calc(33.333% - 20px);
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 1 1 calc(50% - 20px); /* 2 bài viết mỗi hàng trên màn hình nhỏ */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-4 {
+        flex: 1 1 100%; /* 1 bài viết mỗi hàng trên màn hình rất nhỏ */
+        max-width: 100%;
+    }
+}

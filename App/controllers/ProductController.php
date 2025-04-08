@@ -37,9 +37,12 @@ class ProductController
         $url = "http://localhost:8080/web_bandienthoai_mysql_php/api/product/show/" . $id;
         $json = file_get_contents($url);
         $response = json_decode($json, true);
-        
-        
 
+        if (empty($response) || !isset($response['id'])) {
+            die("Không tìm thấy sản phẩm hoặc dữ liệu không hợp lệ.");
+        }
+
+        $product = $response; // Gán dữ liệu vào biến $product
         include __DIR__ . '/../views/product/productdetails.php';
     }
 }

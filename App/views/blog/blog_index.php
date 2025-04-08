@@ -33,8 +33,30 @@
                 </div>
             </div>
             <!--== End Page Header Area Wrapper ==-->
+            <div class="container">
+                <div class="row">
+                    <?php if (!empty($blog)): ?>
+                        <?php foreach ($blog as $post): ?>
+                            <div class="col-md-4">
+                                <div class="blog-card">
+                                    <div class="blog-thumbnail">
+                                        <img src="<?= htmlspecialchars($post['thumbnail']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" class="img-fluid">
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3 class="blog-title"><?= htmlspecialchars($post['title']) ?></h3>
+                                        <p class="blog-excerpt"><?= htmlspecialchars(substr($post['content'], 0, 100)) ?>...</p>
+                                        <a href="/web_bandienthoai_mysql_php/blog/show?id=<?= $post['id'] ?>"> class="btn-link">Xem thêm →</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p>Không có bài viết nào.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
 
-            
         </main>
     </div>
 </body>
