@@ -135,7 +135,7 @@ class AccountController
 
                         // Điều hướng dựa trên vai trò
                         if ($_SESSION['role'] === 'admin') {
-                            header('Location: /web_bandienthoai_mysql_php/admin/userManage');
+                            header('Location: /web_bandienthoai_mysql_php/admin/AccountAdmin/userManage');
                         } else {
                             header('Location: /web_bandienthoai_mysql_php/home');
                         }
