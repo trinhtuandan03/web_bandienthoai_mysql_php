@@ -105,54 +105,50 @@
                     </div>
                 </div>
                 <div class="container mt-4">
-                    <% if (error) { %>
-                        <div class="alert alert-danger">
-                            <%= error %>
+                    <form action="/web_bandienthoai_mysql_php/admin/productAdmin/store" method="POST">
+                        <div class="form-group">
+                            <label>Tên sản phẩm</label>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
-                        <% } %>
 
-                            <form action="/SanPhamManage/Create" method="POST">
-                                <div class="form-group">
-                                    <label>Tên sản phẩm</label>
-                                    <input type="text" name="name" class="form-control" required>
-                                </div>
+                        <div class="form-group">
+                            <label>Giá</label>
+                            <input type="number" name="price" class="form-control" required>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Giá</label>
-                                    <input type="number" name="price" class="form-control" required>
-                                </div>
+                        <div class="form-group">
+                            <label>Mô tả</label>
+                            <textarea name="description" class="form-control"></textarea>
+                        </div>
 
-                                <div class="form-group">
-                                    <label>Mô tả</label>
-                                    <textarea name="description" class="form-control"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>Loại sản phẩm</label>
-                                    <select name="category" class="form-control" required>
-                                        <option value="">-- Chọn loại sản phẩm --</option>
-                                        <% categories.forEach(cat=> { %>
-                                            <option value="<%= cat.id %>">
-                                                <%= cat.name %>
-                                            </option>
-                                            <% }) %>
-                                    </select>
-                                </div>
+                        <div class="form-group">
+                            <label>Loại sản phẩm</label>
+                            <select name="category" class="form-control" required>
+                                <option value="">-- Chọn loại sản phẩm --</option>
+                                <?php foreach ($categories as $category): ?>
+                                    <option value="<?php echo $category['id']; ?>"><?php echo htmlspecialchars($category['name']); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
 
-                                <% for (let i=0; i < 5; i++) { %>
-                                    <div class="form-group">
-                                        <label>URL ảnh <%= i===0 ? "" : i %></label>
-                                        <input type="text" name="URLImage<%= i === 0 ? "" : i %>" class="form-control">
-                                    </div>
-                                    <% } %>
+                        <div class="form-group">
+                            <label>URL ảnh 1</label>
+                            <input type="text" name="URLImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>URL ảnh 2</label>
+                            <input type="text" name="URLImage2" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>URL ảnh 3</label>
+                            <input type="text" name="URLImage3" class="form-control">
+                        </div>
 
-                                        <button type="submit" class="btn btn-success">Thêm mới</button>
-                                        <a href="/SanPhamManage/Index" class="btn btn-secondary">Huỷ</a>
-                            </form>
+                        <button type="submit" class="btn btn-success">Thêm mới</button>
+                        <a href="/web_bandienthoai_mysql_php/admin/productAdmin/index" class="btn btn-secondary">Huỷ</a>
+                    </form>
                 </div>
 
-            </div>
-            <div class="footer">
-                <%- include('../partical/footerManage') %>
             </div>
         </div>
     </div>

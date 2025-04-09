@@ -1,13 +1,9 @@
 ﻿<!doctype html>
 <html lang="en">
 
-<!-- Mirrored from colorlib.com//polygon/concept/pages/chart-chartist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jun 2024 18:13:23 GMT -->
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet"
         href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/css/bootstrap.min.css">
     <link href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/circular-std/style.css"
@@ -15,78 +11,7 @@
     <link rel="stylesheet" href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/css/style.css">
     <link rel="stylesheet"
         href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet"
-        href="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/charts/chartist-bundle/chartist.css">
     <title>Quản Lý Sản Phẩm</title>
-    <meta name="robots" content="noindex, nofollow">
-    <script nonce="bea0a831-0822-4b06-8312-50544fd9fd85">
-        try {
-            (function (w, d) {
-                ! function (j, k, l, m) {
-                    j[l] = j[l] || {};
-                    j[l].executed = [];
-                    j.zaraz = {
-                        deferred: [],
-                        listeners: []
-                    };
-                    j.zaraz._v = "5671";
-                    j.zaraz.q = [];
-                    j.zaraz._f = function (n) {
-                        return async function () {
-                            var o = Array.prototype.slice.call(arguments);
-                            j.zaraz.q.push({
-                                m: n,
-                                a: o
-                            })
-                        }
-                    };
-                    for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p);
-                    j.zaraz.init = () => {
-                        var q = k.getElementsByTagName(m)[0],
-                            r = k.createElement(m),
-                            s = k.getElementsByTagName("title")[0];
-                        s && (j[l].t = k.getElementsByTagName("title")[0].text);
-                        j[l].x = Math.random();
-                        j[l].w = j.screen.width;
-                        j[l].h = j.screen.height;
-                        j[l].j = j.innerHeight;
-                        j[l].e = j.innerWidth;
-                        j[l].l = j.location.href;
-                        j[l].r = k.referrer;
-                        j[l].k = j.screen.colorDepth;
-                        j[l].n = k.characterSet;
-                        j[l].o = (new Date).getTimezoneOffset();
-                        if (j.dataLayer)
-                            for (const w of Object.entries(Object.entries(dataLayer).reduce(((x, y) => ({
-                                ...x[1],
-                                ...y[1]
-                            })), {}))) zaraz.set(w[0], w[1], {
-                                scope: "page"
-                            });
-                        j[l].q = [];
-                        for (; j.zaraz.q.length;) {
-                            const z = j.zaraz.q.shift();
-                            j[l].q.push(z)
-                        }
-                        r.defer = !0;
-                        for (const A of [localStorage, sessionStorage]) Object.keys(A || {}).filter((C => C.startsWith("_zaraz_"))).forEach((B => {
-                            try {
-                                j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B))
-                            } catch {
-                                j[l]["z_" + B.slice(7)] = A.getItem(B)
-                            }
-                        }));
-                        r.referrerPolicy = "origin";
-                        r.src = "https://colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(j[l])));
-                        q.parentNode.insertBefore(r, q)
-                    };
-                    ["complete", "interactive"].includes(k.readyState) ? zaraz.init() : j.addEventListener("DOMContentLoaded", zaraz.init)
-                }(w, d, "zarazData", "script");
-            })(window, document)
-        } catch (e) {
-            throw fetch("/cdn-cgi/zaraz/t"), e;
-        };
-    </script>
 </head>
 
 <body>
@@ -96,108 +21,78 @@
             <?php include __DIR__ . '/../partical/menuManage.php'; ?>
         </div>
         <div class="dashboard-wrapper">
-            <div class="container-fluid  dashboard-content">
+            <div class="container-fluid dashboard-content">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Danh Sách Sản Phẩm </h2>
+                            <h2 class="pageheader-title">Danh Sách Sản Phẩm</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <p>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <a href="/SanPhamManage/Create" class="btn btn-primary">Thêm Sản Phẩm</a>
+                            <div class="card-header">
+                                <a href="/web_bandienthoai_mysql_php/admin/productAdmin/create" class="btn btn-primary">Thêm Sản Phẩm</a>
                             </div>
-                            </p>
-                        </div>
-                        <% if (error) { %>
-                            <div class="alert alert-danger">
-                                <%= error %>
-                            </div>
-                            <% } %>
+                            <div class="card-body">
+                                <?php if (isset($error)) : ?>
+                                    <div class="alert alert-danger">
+                                        <?php echo htmlspecialchars($error); ?>
+                                    </div>
+                                <?php endif; ?>
 
                                 <table class="table table-bordered mt-3">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>Tên</th>
-                                            <th>Giá</th>
                                             <th>Mô tả</th>
-                                            <th>Danh mục</th>
+                                            <th>Giá</th>
                                             <th>Hình ảnh</th>
+                                            <th>Danh mục</th>
+                                            <th>Hành động</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% products.forEach(function(product) { %>
+                                        <?php if (!empty($products)) : ?>
+                                            <?php foreach ($products as $product) : ?>
+                                                <tr>
+                                                    <td><?php echo htmlspecialchars($product['name']); ?></td>
+                                                    <td><?php echo htmlspecialchars($product['description'] ?? 'Không có'); ?></td>
+                                                    <td><?php echo number_format($product['price'], 0, ',', '.') . ' đ'; ?></td>
+                                                    <td>
+                                                        <?php if (!empty($product['image1'])) : ?>
+                                                            <img src="<?php echo htmlspecialchars($product['image1']); ?>" alt="Ảnh 1" style="width: 60px;">
+                                                        <?php endif; ?>
+                                                    </td>
+                                                    <td><?php echo htmlspecialchars($product['category_name']); ?></td>
+                                                    <td>
+                                                        <a href="http://localhost:8080/web_bandienthoai_mysql_php/admin/productAdmin/show?id=<?php echo $product['id']; ?>" class="btn btn-info btn-sm">Chi tiết</a>
+                                                        <a href="http://localhost:8080/web_bandienthoai_mysql_php/admin/productAdmin/edit?id=<?php echo $product['id']; ?>" class="btn btn-warning btn-sm">Sửa</a>
+                                                        <a href="http://localhost:8080/web_bandienthoai_mysql_php/admin/productAdmin/destroy?id=<?php echo $product['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')">Xóa</a>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        <?php else : ?>
                                             <tr>
-                                                <td>
-                                                    <%= product.name %>
-                                                </td>
-                                                <td>
-                                                    <%= product.price.toLocaleString() %> đ
-                                                </td>
-                                                <td>
-                                                    <%= product.description || "Không có" %>
-                                                </td>
-                                                <td>
-                                                    <%= product.category %>
-                                                </td>
-                                                <td>
-                                                    <% if (product.images.length> 0) { %>
-                                                        <img src="<%= product.images[0] %>" alt="ảnh"
-                                                            style="width: 60px;">
-                                                        <% } else { %>
-                                                            Không có ảnh
-                                                            <% } %>
-                                                </td>
-                                                <td>
-                                                    <a href="/SanPhamManage/Details?id=<%= product.id %>"
-                                                        class="btn btn-info btn-sm">Chi tiết</a>
-                                                    <a href="/SanPhamManage/Edit?id=<%= product.id %>"
-                                                        class="btn btn-warning btn-sm">Sửa</a>
-                                                    <a href="/SanPhamManage/Delete?id=<%= product.id %>"
-                                                        class="btn btn-danger btn-sm"
-                                                        onclick="return confirm('Bạn có chắc chắn xoá?')">Xoá</a>
-                                                </td>
+                                                <td colspan="7" class="text-center">Không có sản phẩm nào</td>
                                             </tr>
-                                            <% }) %>
+                                        <?php endif; ?>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="footer">
-                <%- include('../partical/footerManage') %>
+                <?php include __DIR__ . '/../partical/footerManage.php'; ?>
             </div>
         </div>
     </div>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/vendor/charts/chartist-bundle/Chartistjs.js"></script>
-    <script src="https://colorlib.com//polygon/concept/assets/libs/js/main-js.js"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer
-        src="https://static.cloudflareinsights.com/beacon.min.js/vef91dfe02fce4ee0ad053f6de4f175db1715022073587"
-        integrity="sha512-sDIX0kl85v1Cl5tu4WGLZCpH/dV9OHbA4YlKCuCiMmOQIk4buzoYDZSFj+TvC71mOBLh8CDC/REgE0GX0xcbjA=="
-        data-cf-beacon='{"rayId":"88fa604b0e42715e","b":1,"version":"2024.4.1","token":"cd0b4b3a733644fc843ef0b185f98241"}'
-        crossorigin="anonymous"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="http://localhost:8080/web_bandienthoai_mysql_php/public/admin/libs/js/main-js.js"></script>
 </body>
-
-<!-- Mirrored from colorlib.com//polygon/concept/pages/chart-chartist.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jun 2024 18:13:24 GMT -->
 
 </html>

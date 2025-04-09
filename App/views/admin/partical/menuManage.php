@@ -28,7 +28,7 @@
                     <div id="submenu-2" class="collapse submenu" style>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="/SanPhamManage/Index">Danh sách sản phẩm</a>
+                                <a class="nav-link" href="http://localhost:8080/web_bandienthoai_mysql_php/admin/productAdmin/index">Danh sách sản phẩm</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/SanPhamManage/Create">Thêm sản phẩm</a>
